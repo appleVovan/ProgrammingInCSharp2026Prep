@@ -5,6 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>KMA.ProgrammingInCSharp2026.Samples</RootNamespace>
   </PropertyGroup>
 
 </Project>

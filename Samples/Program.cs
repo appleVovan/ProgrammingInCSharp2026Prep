@@ -1,4 +1,4 @@
-﻿namespace Samples
+﻿namespace KMA.ProgrammingInCSharp2026.Samples
 {
     internal class Program
     {
