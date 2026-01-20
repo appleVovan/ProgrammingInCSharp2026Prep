@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.Samples
 {
-    internal class Dog
+    internal partial class Dog
     {
     }
 }
