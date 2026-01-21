@@ -10,9 +10,11 @@
         #region Initialization in C# Examples
         static void Sample1()
         {
-            Student mystudent1 = new Student();
-            mystudent1.FirstName = "Steve";
-            mystudent1.LastName = "Jobs";
+            Student mystudent1 = new Student
+            {
+                FirstName = "Steve",
+                LastName = "Jobs"
+            };
 
             Student mystudent2 = new Student();
             mystudent1.FirstName = "Bill";
