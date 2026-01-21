@@ -47,7 +47,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region New Line Examples
         static void Sample4()
         {
-            string tempVar = "My name is Volodymyr.\nMy age is 30.";
+            string tempVar = "My name is Volodymyr" + Environment.NewLine + "My age is 30.";
         }
         #endregion
     }
