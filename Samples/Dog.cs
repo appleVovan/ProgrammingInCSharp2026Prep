@@ -6,6 +6,6 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 {
     internal partial class Dog
     {
-        private int
+        private int age;
     }
 }
