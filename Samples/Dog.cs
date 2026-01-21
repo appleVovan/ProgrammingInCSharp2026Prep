@@ -12,5 +12,10 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             return age;
         }
+
+        public void Set_Age(int val)
+        {
+            age = val;
+        }
     }
 }
