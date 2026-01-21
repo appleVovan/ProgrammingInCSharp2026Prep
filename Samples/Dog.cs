@@ -63,6 +63,11 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         }
 
+        public void Talk(int times, string value, bool sit)
+        {
+
+        }
+
         public DogBreed Breed { get => breed; set => breed = value; }
 
         public void MyMethod()
