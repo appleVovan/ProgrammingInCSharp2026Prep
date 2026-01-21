@@ -23,7 +23,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         public string Name { get => name; set => name = value; }
 
-        public int MyProperty { get; private set; }
+        public int MyProperty { get; }
 
         public void MyMethod()
         {
