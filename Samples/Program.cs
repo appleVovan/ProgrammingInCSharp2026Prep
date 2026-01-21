@@ -1,5 +1,6 @@
 ﻿using KMA.ProgrammingInCSharp2026.Samples.Original;
 using KMA.ProgrammingInCSharp2026.Samples.Copy;
+using циферка = System.Int32;
 
 namespace KMA.ProgrammingInCSharp2026.Samples
 {
@@ -24,7 +25,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Variable Initialization Examples
         static void Sample2()
         {
-            int i, j, k;
+            циферка i, j, k;
             i = j = k = 0;
         }
         #endregion
