@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KMA.ProgrammingInCSharp2026.Samples.Original
+namespace KMA.ProgrammingInCSharp2026.Samples.Copy
 {
     internal class Student
     {
@@ -12,12 +12,6 @@ namespace KMA.ProgrammingInCSharp2026.Samples.Original
         public string GetFullName()
         {
             return FirstName + " " + LastName;
-        }
-
-        public Student(string firstName = "Default", string lastName = "Default")
-        {
-            FirstName = firstName;
-            LastName = lastName;
         }
     }
 }
