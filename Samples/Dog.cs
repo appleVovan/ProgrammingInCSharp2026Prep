@@ -50,7 +50,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             int val1 = Age;
             Age = 5;
 
-            Breed = DogBreed.Labrador;
+            Breed = 4;
         }
     }
 }
