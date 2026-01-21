@@ -16,19 +16,16 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         public Student()
         {
-            FirstName = "Default";
-            LastName = "Default";
         }
 
-        public Student(string lastName)
+        public Student(string lastName) : this()
         {
-            LastName = LastName;
+            LastName = lastName;
         }
 
-        public Student(string firstName, string lastName)
+        public Student(string firstName, string lastName) : this(lastName)
         {
             FirstName = firstName;
-            LastName = LastName;
         }
     }
 }
