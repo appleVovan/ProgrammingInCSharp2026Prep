@@ -20,8 +20,14 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         public int Age
         {
-            get;
-            set;
+            get
+            {
+                return age;
+            }
+            set
+            {
+                age = value;
+            }
         }
     }
 }
