@@ -7,5 +7,10 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     internal partial class Dog
     {
         private int age;
+
+        public int Get_Age()
+        {
+            return age;
+        }
     }
 }
