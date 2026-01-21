@@ -38,7 +38,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             int x = 1000;
 
-            byte y = (byte)x;
+            byte y = checked((byte)x);
 
             Console.WriteLine(y);
         }
