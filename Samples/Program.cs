@@ -20,5 +20,12 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             mystudent1.LastName = "Gates";
         }
         #endregion
+
+        #region Variable Initialization Examples
+        static void Sample2()
+        {
+            
+        }
+        #endregion
     }
 }
