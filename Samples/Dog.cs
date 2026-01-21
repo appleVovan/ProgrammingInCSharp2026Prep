@@ -4,6 +4,13 @@ using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.Samples
 {
+    public enum DogBreed
+    {
+        Poodle,
+        Labrador,
+        Labradoodle
+    }
+
     internal partial class Dog
     {
         private int age;
