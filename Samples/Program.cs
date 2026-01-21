@@ -13,7 +13,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Initialization in C# Examples
         static void Sample1()
         {
-            var mystudent1 = new Student() { FirstName = "Steve", LastName = "Jobs" };
+            var mystudent1 = new Original.Student() { FirstName = "Steve", LastName = "Jobs" };
 
             Copy.Student mystudent2 = new Copy.Student();
             mystudent1.FirstName = "Bill";
