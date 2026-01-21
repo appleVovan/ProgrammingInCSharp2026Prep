@@ -43,5 +43,12 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine(y);
         }
         #endregion
+
+        #region New Line Examples
+        static void Sample4()
+        {
+            string tempVar = "My name is Volodymyr.\nMy age is 30.";
+        }
+        #endregion
     }
 }
