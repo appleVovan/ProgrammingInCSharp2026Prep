@@ -14,7 +14,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             var mystudent1 = new Student() { FirstName = "Steve", LastName = "Jobs" };
 
-            Student mystudent2 = new Student();
+            Copy.Student mystudent2 = new Copy.Student();
             mystudent1.FirstName = "Bill";
             mystudent1.LastName = "Gates";
         }
