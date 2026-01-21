@@ -63,6 +63,11 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         }
 
+        public int Talk(string value)
+        {
+            return 0;
+        }
+
         public void Talk(int times, string value, bool sit)
         {
 
