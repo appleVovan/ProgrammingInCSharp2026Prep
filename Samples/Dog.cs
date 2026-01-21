@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.Samples
@@ -15,6 +16,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         private int age;
         private string name;
+        private DogBreed breed;
 
         public int Age
         {
@@ -37,6 +39,8 @@ namespace KMA.ProgrammingInCSharp2026.Samples
                 return $"Name: {Name}, age: {Age}";
             }
         }
+
+        public DogBreed Breed { get => breed; set => breed = value; }
 
         public void MyMethod()
         {
