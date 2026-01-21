@@ -50,7 +50,17 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             int val1 = Age;
             Age = 5;
 
-            Breed = (DogBreed)4;
+            Breed = DogBreed.Labrador;
+
+            switch (breed)
+            {
+                case DogBreed.Poodle:
+                    break;
+                case DogBreed.Labrador:
+                    break;
+                case DogBreed.Labradoodle:
+                    break;
+            }
         }
     }
 }
