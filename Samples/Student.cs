@@ -14,18 +14,18 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             return FirstName + " " + LastName;
         }
 
-        public Student()
+        public Student() : this("Default")
         {
         }
 
-        public Student(string lastName) : this()
+        public Student(string lastName) : this("Default", lastName)
         {
-            LastName = lastName;
         }
 
-        public Student(string firstName, string lastName) : this(lastName)
+        public Student(string firstName, string lastName)
         {
             FirstName = firstName;
+            LastName = LastName;
         }
     }
 }
