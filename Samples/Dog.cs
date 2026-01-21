@@ -7,6 +7,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     internal partial class Dog
     {
         private int age;
+        private string name;
 
         public int Age
         {
@@ -20,7 +21,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             }
         }
 
-        public string Name { get; set; }
+        public string Name { get => name; set => name = value; }
 
         public void MyMethod()
         {
