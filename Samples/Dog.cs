@@ -68,7 +68,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             return 0;
         }
 
-        public void Talk(int times, string value, bool sit)
+        public void Talk(int times, string value = "woof", bool sit = false)
         {
 
         }
