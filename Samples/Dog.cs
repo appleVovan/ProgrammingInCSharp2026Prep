@@ -43,6 +43,21 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             }
         }
 
+        private void Foo()
+        {
+
+        }
+
+        internal void Bar()
+        {
+
+        }
+
+        protected void Gas()
+        {
+
+        }
+
         public DogBreed Breed { get => breed; set => breed = value; }
 
         public void MyMethod()
