@@ -26,7 +26,10 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             }
             set
             {
-                age = value;
+                if (value >= 0)
+                    age = value;
+                else
+                    throw new Exception();
             }
         }
 
