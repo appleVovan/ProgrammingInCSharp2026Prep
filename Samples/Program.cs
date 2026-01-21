@@ -24,7 +24,8 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Variable Initialization Examples
         static void Sample2()
         {
-            
+            int i, j, k;
+            i = j = k = 0;
         }
         #endregion
     }
