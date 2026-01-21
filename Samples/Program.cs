@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Sample3();
         }
 
         #region Initialization in C# Examples
@@ -30,6 +30,17 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             циферка i, j, k;
             i = j = k = 0;
+        }
+        #endregion
+
+        #region Type conversion Examples
+        static void Sample3()
+        {
+            int x = 1000;
+
+            byte y = x;
+
+            Console.WriteLine(y);
         }
         #endregion
     }
