@@ -6,9 +6,9 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 {
     public enum DogBreed
     {
-        Poodle,
-        Labrador,
-        Labradoodle
+        Poodle = 0,
+        Labrador = 1,
+        Labradoodle = 5
     }
 
     internal partial class Dog
