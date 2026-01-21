@@ -1,4 +1,5 @@
 ﻿using KMA.ProgrammingInCSharp2026.Samples.Original;
+using KMA.ProgrammingInCSharp2026.Samples.Copy;
 
 namespace KMA.ProgrammingInCSharp2026.Samples
 {
