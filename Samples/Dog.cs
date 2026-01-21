@@ -23,7 +23,13 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         public string Name { get => name; set => name = value; }
 
-        public int MyProperty { get; }
+        public string Identifier
+        {
+            get
+            {
+                return Name + ' ' + Age;
+            }
+        }
 
         public void MyMethod()
         {
