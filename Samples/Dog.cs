@@ -27,7 +27,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             get
             {
-                return Name + ' ' + Age;
+                return $"{Name} {Age}";
             }
         }
 
