@@ -91,6 +91,14 @@ namespace KMA.ProgrammingInCSharp2026.Samples
                 case DogBreed.Labradoodle:
                     break;
             }
+
+            Talk("woof");
+
+            Talk(3);
+
+            Talk(3, "bark");
+
+            Talk(3, sit: true);
         }
     }
 }
