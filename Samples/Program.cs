@@ -1,5 +1,8 @@
 ﻿using KMA.ProgrammingInCSharp2026.Samples.Original;
 using KMA.ProgrammingInCSharp2026.Samples.Copy;
+using OriginalStudent = KMA.ProgrammingInCSharp2026.Samples.Original.Student;
+using CopyStudent = KMA.ProgrammingInCSharp2026.Samples.Copy.Student;
+
 using циферка = System.Int32;
 
 namespace KMA.ProgrammingInCSharp2026.Samples
@@ -14,9 +17,9 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Initialization in C# Examples
         static void Sample1()
         {
-            var mystudent1 = new Original.Student() { FirstName = "Steve", LastName = "Jobs" };
+            var mystudent1 = new OriginalStudent() { FirstName = "Steve", LastName = "Jobs" };
 
-            Copy.Student mystudent2 = new Copy.Student();
+            CopyStudent mystudent2 = new CopyStudent();
             mystudent1.FirstName = "Bill";
             mystudent1.LastName = "Gates";
         }
