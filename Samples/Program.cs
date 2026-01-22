@@ -70,14 +70,17 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         class MyClass
         {
             public int MyProperty { get; set; }
+            public MyClass MyChild { get; set; }
         }
 
         static void Sample6()
         {
             MyClass myObject = new MyClass();
             myObject.MyProperty = 5;
-            MyMethodObject(ref myObject);
-            Console.WriteLine(myObject.MyProperty);
+            myObject.MyChild = new MyClass();
+            myObject.MyChild.MyProperty = 5;
+            MyMethodObject(ref myObject.MyChild);
+            Console.WriteLine(myObject.MyChild.MyProperty);
         }
 
         static void MyMethodObject(ref MyClass myObject)
