@@ -79,7 +79,8 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             myObject.MyProperty = 5;
             myObject.MyChild = new MyClass();
             myObject.MyChild.MyProperty = 5;
-            MyMethodObject(ref myObject.MyChild);
+            var myObjectMyChild = myObject.MyChild;
+            MyMethodObject(ref myObjectMyChild);
             Console.WriteLine(myObject.MyChild.MyProperty);
         }
 
