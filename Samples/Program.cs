@@ -138,6 +138,20 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             }
         }
 
+        static void Sample11()
+        {
+            if (SaveToServer())
+            { 
+            }
+            else 
+                if (SaveLocalCopy())
+                {
+                }
+                else
+                {
+                }
+        }
+
         private static bool SaveLocalCopy()
         {
             return true;
