@@ -55,11 +55,11 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         static void Sample5()
         {
             int myInt = 5;
-            MyMethodInt(myInt);
+            MyMethodInt(ref myInt);
             Console.WriteLine(myInt);
         }
 
-        static void MyMethodInt(int myInt)
+        static void MyMethodInt(ref int myInt)
         {
             myInt = 6;
             Console.WriteLine(myInt);
