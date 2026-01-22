@@ -69,8 +69,10 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Reference Type Behaviour Examples
         class MyClass
         {
+            internal MyClass myChild;
+
             public int MyProperty { get; set; }
-            public MyClass MyChild { get; set; }
+            public MyClass MyChild { get => myChild; set => myChild = value; }
         }
 
         static void Sample6()
@@ -79,8 +81,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             myObject.MyProperty = 5;
             myObject.MyChild = new MyClass();
             myObject.MyChild.MyProperty = 5;
-            var myObjectMyChild = myObject.MyChild;
-            MyMethodObject(ref myObjectMyChild);
+            MyMethodObject(ref myObject.myChild);
             Console.WriteLine(myObject.MyChild.MyProperty);
         }
 
