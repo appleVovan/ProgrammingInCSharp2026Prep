@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample9();
+            Sample10();
         }
 
         #region Initialization in C# Examples
@@ -123,6 +123,29 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
             Console.WriteLine(str1 == str2);
             Console.WriteLine(str1.Equals(str2));
+        }
+        #endregion
+
+        #region | and || comparison
+        static void Sample10()
+        {
+            if (SaveToServer() || SaveLocalCopy())
+            {
+            }
+
+            if (SaveToServer() | SaveLocalCopy())
+            {
+            }
+        }
+
+        private static bool SaveLocalCopy()
+        {
+            return true;
+        }
+
+        private static bool SaveToServer()
+        {
+            return true;
         }
         #endregion
     }
