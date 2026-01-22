@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample5();
+            Sample6();
         }
 
         #region Initialization in C# Examples
@@ -51,7 +51,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         }
         #endregion
 
-        #region Value & Reference Type Behaviour Examples
+        #region Value Type Behaviour Examples
         static void Sample5()
         {
             int myInt;
@@ -63,6 +63,27 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             myInt = 6;
             Console.WriteLine(myInt);
+        }
+        #endregion
+
+        #region Reference Type Behaviour Examples
+        class MyClass
+        {
+            public int MyProperty { get; set; }
+        }
+
+        static void Sample6()
+        {
+            MyClass myObject = new MyClass();
+            myObject.MyProperty = 5;
+            MyMethodObject(myObject);
+            Console.WriteLine(myObject.MyProperty);
+        }
+
+        static void MyMethodObject(MyClass myObject)
+        {
+            myObject.MyProperty = 6;
+            Console.WriteLine(myObject.MyProperty);
         }
         #endregion
     }
