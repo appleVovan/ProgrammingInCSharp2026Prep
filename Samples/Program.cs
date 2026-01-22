@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample6();
+            Sample7();
         }
 
         #region Initialization in C# Examples
@@ -90,6 +90,17 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             myObject = new MyClass();
             myObject.MyProperty = 6;
             Console.WriteLine(myObject.MyProperty);
+        }
+        #endregion
+
+        #region Value Types comparison
+        static void Sample7()
+        {
+            int val1 = 5;
+            int val2 = 5;
+
+            Console.WriteLine(val1 == val2);
+            Console.WriteLine(val1.Equals(val2));
         }
         #endregion
     }
