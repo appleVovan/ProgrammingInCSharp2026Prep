@@ -162,5 +162,16 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             return true;
         }
         #endregion
+
+        #region Reference Types comparison
+        static void Sample12()
+        {
+            OriginalStudent obj1 = null;
+            OriginalStudent obj2 = new OriginalStudent("Volodymyr", "Yablonskyi");
+
+            OriginalStudent obj = obj1 ?? obj2;
+            string firstName = obj1?.FirstName ?? obj2.FirstName ?? "Default";
+        }
+        #endregion
     }
 }
