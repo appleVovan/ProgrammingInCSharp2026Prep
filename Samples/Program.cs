@@ -82,6 +82,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         static void MyMethodObject(MyClass myObject)
         {
+            myObject = new MyClass();
             myObject.MyProperty = 6;
             Console.WriteLine(myObject.MyProperty);
         }
