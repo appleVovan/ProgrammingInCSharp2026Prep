@@ -54,12 +54,12 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Value & Reference Type Behaviour Examples
         static void Sample5()
         {
-            int myInt = 5;
-            MyMethodInt(ref myInt);
+            int myInt;
+            MyMethodInt(out myInt);
             Console.WriteLine(myInt);
         }
 
-        static void MyMethodInt(ref int myInt)
+        static void MyMethodInt(out int myInt)
         {
             myInt = 6;
             Console.WriteLine(myInt);
