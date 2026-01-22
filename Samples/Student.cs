@@ -19,5 +19,15 @@ namespace KMA.ProgrammingInCSharp2026.Samples.Original
             FirstName = firstName;
             LastName = lastName;
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Student))
+                return false;
+            Student castedObj = (Student)obj;
+            if (castedObj == null)
+                return false;
+            return FirstName == castedObj.FirstName && LastName == castedObj.LastName;
+        }
     }
 }
