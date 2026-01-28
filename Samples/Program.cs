@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample14();
+            Sample15();
         }
 
         #region Initialization in C# Examples
@@ -216,6 +216,14 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             ((Dog)animalDog).Speak();
             Dog dog = new Dog();
             dog.Speak();
+        }
+
+        static void Sample15()
+        {
+            Animal animalBasenji = new Basenji();
+            animalBasenji.Speak();
+            ((Dog)animalBasenji).Speak();
+            ((Basenji)animalBasenji).Speak();
         }
         #endregion
     }
