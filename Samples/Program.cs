@@ -175,17 +175,14 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #endregion
 
         #region Inheritance
-        class Animal
+        abstract class Animal
         {
-            public virtual void Speak()
-            {
-                Console.WriteLine("Animal speaks");
-            }
+            public abstract void Speak();
         }
 
-        sealed class Dog : Animal
+        class Dog : Animal
         {
-            public sealed override void Speak()
+            public override void Speak()
             {
                 Console.WriteLine("Woof");
             }
@@ -193,7 +190,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         class Basenji : Dog
         {
-            public new void Speak()
+            public override void Speak()
             {
                 Console.WriteLine("Basenji is silent");
             }
@@ -201,8 +198,6 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         static void Sample13()
         {
-            Animal animal = new Animal();
-            animal.Speak();
             Animal animalDog = new Dog();
             animalDog.Speak();
             Animal animalBasenji = new Basenji();
