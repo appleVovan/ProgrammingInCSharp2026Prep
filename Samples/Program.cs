@@ -183,7 +183,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             }
         }
 
-        class Dog : Animal
+        sealed class Dog : Animal
         {
             public sealed override void Speak()
             {
