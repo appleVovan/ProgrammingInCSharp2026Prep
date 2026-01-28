@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.2.11408.102 d18.0
+VisualStudioVersion = 18.2.11408.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "Samples\Samples.csproj", "{7728D5AC-8703-4A2A-AF13-9BEF4A226FA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseProject.DBModels", "CourseProject.DBModels\CourseProject.DBModels.csproj", "{82DD63B8-C1AB-49B4-B3F0-A5A236797E16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7728D5AC-8703-4A2A-AF13-9BEF4A226FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7728D5AC-8703-4A2A-AF13-9BEF4A226FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7728D5AC-8703-4A2A-AF13-9BEF4A226FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DD63B8-C1AB-49B4-B3F0-A5A236797E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DD63B8-C1AB-49B4-B3F0-A5A236797E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DD63B8-C1AB-49B4-B3F0-A5A236797E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DD63B8-C1AB-49B4-B3F0-A5A236797E16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
