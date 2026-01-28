@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample10();
+            Sample13();
         }
 
         #region Initialization in C# Examples
@@ -171,6 +171,42 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
             OriginalStudent obj = obj1 ?? obj2;
             string firstName = obj1?.FirstName ?? obj2.FirstName ?? "Default";
+        }
+        #endregion
+
+        #region Inheritance
+        class Animal
+        {
+            public void Speak()
+            {
+                Console.WriteLine("Animal speaks");
+            }
+        }
+
+        class Dog : Animal
+        {
+            public void Speak()
+            {
+                Console.WriteLine("Woof");
+            }
+        }
+
+        class Basenji : Dog
+        {
+            public void Speak()
+            {
+                Console.WriteLine("Basenji is silent");
+            }
+        }
+
+        static void Sample13()
+        {
+            Animal animal = new Animal();
+            animal.Speak();
+            Animal animalDog = new Dog();
+            animalDog.Speak();
+            Animal animalBasenji = new Basenji();
+            animalBasenji.Speak();
         }
         #endregion
     }
