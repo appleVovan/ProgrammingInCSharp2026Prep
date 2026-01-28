@@ -7,4 +7,8 @@
     <RootNamespace>KMA.ProgrammingInCSharp2026.CourseProject.UIModels</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CourseProject.Common\CourseProject.Common.csproj" />
+  </ItemGroup>
+
 </Project>
