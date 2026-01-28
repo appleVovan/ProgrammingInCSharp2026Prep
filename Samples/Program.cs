@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample13();
+            Sample15();
         }
 
         #region Initialization in C# Examples
@@ -185,7 +185,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         class Dog : Animal
         {
-            public override void Speak()
+            public sealed override void Speak()
             {
                 Console.WriteLine("Woof");
             }
@@ -193,7 +193,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         class Basenji : Dog
         {
-            public override void Speak()
+            public new void Speak()
             {
                 Console.WriteLine("Basenji is silent");
             }
