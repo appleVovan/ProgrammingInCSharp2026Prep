@@ -1,4 +1,6 @@
-﻿namespace KMA.ProgrammingInCSharp2026.CourseProject.DBModels
+﻿using KMA.ProgrammingInCSharp2026.CourseProject.CourseProject.Common.Enums;
+
+namespace KMA.ProgrammingInCSharp2026.CourseProject.DBModels
 {
     
 
