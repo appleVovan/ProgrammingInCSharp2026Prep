@@ -1,12 +1,6 @@
-﻿namespace CourseProject.DBModels
+﻿namespace KMA.ProgrammingInCSharp2026.CourseProject.DBModels
 {
-    public enum Faculty
-    {
-        FacultyOfInformatics,
-        FacultyOfEconomics,
-        FacultyOfLaw,
-        FacultyOfNaturalSciences
-    }
+    
 
     public class DepartmentDBModel  
     {

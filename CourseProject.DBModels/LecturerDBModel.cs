@@ -3,16 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.CourseProject.DBModels
-{
-    public enum LecturerPosition
-    {
-        Assistant,
-        Lecturer,
-        SeniorLecturer,
-        AssociateProfessor,
-        Professor,
-    }
-    public class Lecturer
+{    
+    public class LecturerDBModel
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
