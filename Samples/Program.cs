@@ -185,7 +185,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         class Dog : Animal
         {
-            public void Speak()
+            public new void Speak()
             {
                 Console.WriteLine("Woof");
             }
@@ -193,7 +193,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         class Basenji : Dog
         {
-            public void Speak()
+            public new void Speak()
             {
                 Console.WriteLine("Basenji is silent");
             }
