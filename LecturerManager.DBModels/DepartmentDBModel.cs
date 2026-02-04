@@ -11,5 +11,15 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.DBModels
         public Guid Id { get; }
         public string Name { get; set; }
         public Faculty Faculty { get; set; }
+
+        private DepartmentDBModel()
+        {
+        }
+        public DepartmentDBModel(string name, Faculty faculty)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Faculty = faculty;
+        }
     }
 }
