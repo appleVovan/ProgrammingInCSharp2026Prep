@@ -44,18 +44,5 @@ namespace KMA.ProgrammingInCSharp2026.CourseProject.UIModels
             _name = dBModel.Name;
             _faculty = dBModel.Faculty;            
         }
-
-        public void SaveChangesToDBModel()
-        {
-            if (_dbModel != null)
-            {
-                _dbModel.Name = _name;
-                _dbModel.Faculty = _faculty;                
-            }
-            else
-            {
-                _dbModel = new DepartmentDBModel(_name, _faculty);
-            }
-        }
     }
 }
