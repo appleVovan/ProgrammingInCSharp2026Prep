@@ -43,8 +43,8 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
                 new LecturerDBModel(departmentOfInformatics.Id, "Yuriy", "Yushchenko", LecturerPosition.SeniorLecturer, new DateTime(1978,09,21)),
                 new LecturerDBModel(departmentOfInformatics.Id, "Trohym", "Babych", LecturerPosition.Assistant, new DateTime(1992,09,21)),
                 new LecturerDBModel(departmentOfInformatics.Id, "Oleksandr", "Frankiv", LecturerPosition.SeniorLecturer, new DateTime(1978,09,21)),
-                new LecturerDBModel(departmentOfInformatics.Id, "Ruslan", "Chorney", LecturerPosition.AssociateProfessor, new DateTime(1986,02,21)),
-                new LecturerDBModel(departmentOfInformatics.Id, "Bohdana", "Oliynyk", LecturerPosition.Professor, new DateTime(1976,02,05)),
+                new LecturerDBModel(departmentOfMath.Id, "Ruslan", "Chorney", LecturerPosition.AssociateProfessor, new DateTime(1986,02,21)),
+                new LecturerDBModel(departmentOfMath.Id, "Bohdana", "Oliynyk", LecturerPosition.Professor, new DateTime(1976,02,05)),
             };
         }
     }

@@ -8,4 +8,9 @@
     <RootNamespace>KMA.ProgrammingInCSharp2026.LecturerManager.Console</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LecturerManager.Services\LecturerManager.Services.csproj" />
+    <ProjectReference Include="..\LecturerManager.UIModels\LecturerManager.UIModels.csproj" />
+  </ItemGroup>
+
 </Project>

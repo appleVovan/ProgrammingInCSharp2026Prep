@@ -92,5 +92,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
                 _dbModel = new LecturerDBModel(_departmentId, _firstName, _lastName, _position, _dateOfBirth);
             }
         }
+
+        public override string ToString()
+        {
+            return $"Lecturer: {FirstName} {LastName}, {Position}, Age: {Age}";
+        }
     }
 }

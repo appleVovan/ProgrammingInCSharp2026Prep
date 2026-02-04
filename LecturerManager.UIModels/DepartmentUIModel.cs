@@ -73,5 +73,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
                 _lecturers.Add(new LecturerUIModel(lecturerDBModel));
             }
         }
+
+        public override string ToString()
+        {
+            return $"Department: {Name}, Faculty: {Faculty}, Staff: {Staff}";
+        }
     }
 }

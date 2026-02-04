@@ -38,6 +38,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
 
         public IEnumerable<DepartmentDBModel> GetAllDepartments()
         {
+            LoadData();
             var resultList = new List<DepartmentDBModel>();
             foreach (var department in _departments)
             {
