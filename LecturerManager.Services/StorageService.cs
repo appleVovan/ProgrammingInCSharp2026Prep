@@ -18,5 +18,32 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
             _departments = FakeStorage.Departments.ToList();
             _lecturers = FakeStorage.Lecturers.ToList();
         }
+
+        /// <summary>
+        /// Gets all lecturers of specified department
+        /// </summary>
+        /// <param name="departmentGuid"></param>
+        /// <returns></returns>
+        public IEnumerable<LecturerDBModel> GetLecturers(Guid departmentId)
+        {
+            LoadData();
+            var resultList = new List<LecturerDBModel>();
+            foreach (var lecturer in _lecturers)
+            {
+                if (lecturer.DepartmentId == departmentId)
+                    resultList.Add(lecturer);
+            }
+            return resultList;
+        }
+
+        public IEnumerable<DepartmentDBModel> GetAllDepartments()
+        {
+            var resultList = new List<DepartmentDBModel>();
+            foreach (var department in _departments)
+            {
+                resultList.Add(department);
+            }
+            return resultList;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using KMA.ProgrammingInCSharp2026.LecturerManager.CommonComponents.Enums;
 using KMA.ProgrammingInCSharp2026.LecturerManager.DBModels;
+using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -58,6 +59,18 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
             else
             {
                 _dbModel = new DepartmentDBModel(_name, _faculty);
+            }
+        }
+
+        public void LoadLecturers(StorageService storage)
+        {
+            if (Id == null || _lecturers.Count > 0)
+            {
+                return;
+            }
+            foreach (var lecturerDBModel in storage.GetLecturers(Id.Value))
+            {
+                _lecturers.Add(new LecturerUIModel(lecturerDBModel));
             }
         }
     }
