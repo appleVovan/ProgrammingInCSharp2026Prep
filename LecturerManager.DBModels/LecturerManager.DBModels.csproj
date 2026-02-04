@@ -7,4 +7,8 @@
     <RootNamespace>KMA.ProgrammingInCSharp2026.LecturerManager.DBModels</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LecturerManager.CommonComponents\LecturerManager.CommonComponents.csproj" />
+  </ItemGroup>
+
 </Project>

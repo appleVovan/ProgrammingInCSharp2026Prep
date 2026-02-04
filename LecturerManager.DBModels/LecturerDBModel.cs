@@ -1,17 +1,10 @@
-﻿using System;
+﻿using KMA.ProgrammingInCSharp2026.LecturerManager.CommonComponents.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.DBModels
 {
-    public enum LecturerPosition
-    {
-        Assistant,
-        Lecturer,
-        SeniorLecturer,
-        AssociateProfessor,
-        Professor,
-    }
     public class LecturerDBModel
     {
         public Guid Id { get; set; }
