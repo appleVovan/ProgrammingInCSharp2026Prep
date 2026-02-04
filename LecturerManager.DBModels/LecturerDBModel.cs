@@ -7,11 +7,14 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.DBModels
 {
     public class LecturerDBModel
     {
-        public Guid Id { get; set; }
-        public Guid DepartmentId { get; set; }
+        //Id is generated only once during the creation of the object and cannot be changed later. 
+        public Guid Id { get; }
+        //DepartmentId is set only once during the creation of the object and cannot be changed later. 
+        public Guid DepartmentId { get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public LecturerPosition Position { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        //DateOfBirth is set only once during the creation of the object and cannot be changed later. 
+        public DateTime DateOfBirth { get; }
     }
 }
