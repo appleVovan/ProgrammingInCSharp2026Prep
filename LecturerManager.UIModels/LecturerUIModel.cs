@@ -78,5 +78,19 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
             if (_dateOfBirth.Date > today.AddYears(-_age))
                 _age--;
         }
+
+        public void SaveChangesToDBModel()
+        {
+            if (_dbModel != null)
+            {
+                _dbModel.FirstName = _firstName;
+                _dbModel.LastName = _lastName;
+                _dbModel.Position = _position;
+            }
+            else
+            {
+                _dbModel = new LecturerDBModel(_departmentId, _firstName, _lastName, _position, _dateOfBirth);
+            }
+        }
     }
 }
