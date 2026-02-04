@@ -13,5 +13,6 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
         public string LastName { get; set; }
         public LecturerPosition Position { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
     }
 }

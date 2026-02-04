@@ -10,5 +10,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
         public Guid Id { get; set; }
         public string Name { get; set; }
         public Faculty Faculty { get; set; }
+        public List<LecturerUIModel> Lecturers { get; set; }
+        public int Staff { get; set; }
     }
 }
