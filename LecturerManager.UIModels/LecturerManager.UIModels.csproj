@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LecturerManager.CommonComponents\LecturerManager.CommonComponents.csproj" />
+    <ProjectReference Include="..\LecturerManager.DBModels\LecturerManager.DBModels.csproj" />
   </ItemGroup>
 
 </Project>
