@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManager.Services", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManagerConsole", "LecturerManagerConsole\LecturerManagerConsole.csproj", "{1DC5EABE-061E-4071-8866-0D65BA2430E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManager", "LecturerManager\LecturerManager.csproj", "{907B2632-6796-46BF-8DB5-C197E3E48E83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{1DC5EABE-061E-4071-8866-0D65BA2430E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC5EABE-061E-4071-8866-0D65BA2430E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC5EABE-061E-4071-8866-0D65BA2430E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
