@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace LecturerManager
+namespace KMA.ProgrammingInCSharp2026.LecturerManager
 {
     [Application]
     public class MainApplication : MauiApplication

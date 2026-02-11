@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace LecturerManager
+namespace KMA.ProgrammingInCSharp2026.LecturerManager
 {
     public static class MauiProgram
     {

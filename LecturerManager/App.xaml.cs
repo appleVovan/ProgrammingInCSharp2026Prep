@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace LecturerManager
+namespace KMA.ProgrammingInCSharp2026.LecturerManager
 {
     public partial class App : Application
     {
