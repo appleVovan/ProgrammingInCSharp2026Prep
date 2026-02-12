@@ -5,17 +5,17 @@
              Title="Lecturer Create Page">
     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
         <Border 
-            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"            
+            Grid.Row="0" Grid.Column="0"            
             Stroke="Black" StrokeThickness="4" VerticalOptions="Fill"/>
         <Border  
             Grid.Row="0" Grid.Column="1" 
             Stroke="Blue" StrokeThickness="4" VerticalOptions="Fill">
-            <Entry Placeholder="Enter text 1" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
+            <Button Text="Button 2"></Button>
         </Border>
         <Border 
             Grid.Row="1" Grid.Column="0" 
             Stroke="Brown" StrokeThickness="4" VerticalOptions="Fill">
-            <Entry Placeholder="Enter text 2" VerticalOptions="End" HorizontalOptions="Fill"></Entry>
+            <Button Text="Button 3"></Button>
         </Border>
         <Border 
             Grid.Row="1" Grid.Column="1" 
