@@ -10,7 +10,7 @@
         <Border  
             Grid.Row="0" Grid.Column="1" 
             Stroke="Blue" StrokeThickness="4" VerticalOptions="Fill">
-            <Button Text="Button 2"></Button>
+            <Button x:Name="But2" Text="Button 2" Clicked="Button_Clicked"></Button>
         </Border>
         <Border 
             Grid.Row="1" Grid.Column="0" 
