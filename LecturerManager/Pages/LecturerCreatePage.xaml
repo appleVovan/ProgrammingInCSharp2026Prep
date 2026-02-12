@@ -5,10 +5,10 @@
              Title="Lecturer Create Page">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.33*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Stroke="Black" StrokeThickness="4" VerticalOptions="Fill"/>
         <Border Grid.Row="1" Stroke="Blue" StrokeThickness="4" VerticalOptions="Fill">
