@@ -5,7 +5,7 @@
              Title="Lecturer Create Page">
     <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
         <Border 
-            Grid.Row="0" Grid.Column="0"            
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"            
             Stroke="Black" StrokeThickness="4" VerticalOptions="Fill"/>
         <Border  
             Grid.Row="0" Grid.Column="1" 
