@@ -4,11 +4,11 @@
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerCreatePage"
              Title="Lecturer Create Page">
     <Grid>
-        <Border Stroke="Blue" StrokeThickness="4">
+        <Border Stroke="Blue" StrokeThickness="4" VerticalOptions="Start">
             <Entry Placeholder="Enter text 1" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
         </Border>
-        <Border Stroke="Brown" StrokeThickness="4">
-            <Entry Placeholder="Enter text 2" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
+        <Border Stroke="Brown" StrokeThickness="4" VerticalOptions="End">
+            <Entry Placeholder="Enter text 2" VerticalOptions="End" HorizontalOptions="Fill"></Entry>
         </Border>
     </Grid>
 </ContentPage>
