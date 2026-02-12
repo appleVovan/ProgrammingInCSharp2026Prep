@@ -3,16 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerCreatePage"
              Title="Lecturer Create Page">
-    <Border Stroke="Black" StrokeThickness="4" Margin="10" Padding="10">
-        <Border Stroke="Red" StrokeThickness="4" Margin="10" Padding="10">
-            <VerticalStackLayout>
-                <Border Stroke="Blue" StrokeThickness="4">
-                    <Entry Placeholder="Enter text 1" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
-                </Border>
-                <Border Stroke="Brown" StrokeThickness="4">
-                    <Entry Placeholder="Enter text 2" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
-                </Border>
-            </VerticalStackLayout>
+    <Grid>
+        <Border Stroke="Blue" StrokeThickness="4">
+            <Entry Placeholder="Enter text 1" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
         </Border>
-    </Border>
+        <Border Stroke="Brown" StrokeThickness="4">
+            <Entry Placeholder="Enter text 2" VerticalOptions="Start" HorizontalOptions="Fill"></Entry>
+        </Border>
+    </Grid>
 </ContentPage>
