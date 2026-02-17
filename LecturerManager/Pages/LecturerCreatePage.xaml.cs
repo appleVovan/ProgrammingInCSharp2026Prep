@@ -1,5 +1,6 @@
 using KMA.ProgrammingInCSharp2026.LecturerManager.CommonComponents;
 using KMA.ProgrammingInCSharp2026.LecturerManager.CommonComponents.Enums;
+using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 
@@ -33,6 +34,13 @@ public partial class LecturerCreatePage : ContentPage
             DisplayAlert("Incomlete data!", "Date of birth mus be selected", "OK");
             return;
         }
+        var lecturer = new LecturerUIModel(Guid.Empty);
+        lecturer.FirstName = eFirstName.Text;
+        lecturer.LastName = eLastName.Text;
+        lecturer.Position = ((EnumWithName<LecturerPosition>)pPosition.SelectedItem).Value;
+        lecturer.DateOfBirth = dpDoB.Date.Value;
+        lecturer.SaveChangesToDBModel();
+        DisplayAlert("Lecturer Created!", $"Lecturer {lecturer.FirstName} {lecturer.LastName} was created successfully, his age is {lecturer.Age}", "OK");
     }
 
     private void BackClicked(object sender, EventArgs e)
