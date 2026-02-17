@@ -26,10 +26,12 @@
             Padding="10">
             <Button
                 Grid.Column="0"
-                Text="Create Lecturer"></Button>
+                Text="Create Lecturer"
+                Clicked="CreateClicked"></Button>
             <Button
                 Grid.Column="1"
-                Text="Back"></Button>
+                Text="Back"
+                Clicked="BackClicked"></Button>
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
