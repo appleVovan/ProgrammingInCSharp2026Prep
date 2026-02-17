@@ -3,5 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerCreatePage"
              Title="Lecturer Create Page">
-    
+    <VerticalStackLayout>
+        
+    </VerticalStackLayout>
 </ContentPage>
