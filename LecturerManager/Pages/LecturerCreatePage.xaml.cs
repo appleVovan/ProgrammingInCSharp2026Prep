@@ -7,7 +7,7 @@ public partial class LecturerCreatePage : ContentPage
 	public LecturerCreatePage()
 	{
 		InitializeComponent();
-        pPosition.ItemsSource = Enum.GetValues<LecturerPosition>();
+        pPosition.ItemsSource = Enum.GetNames<LecturerPosition>();
 	}
 
     private void CreateClicked(object sender, EventArgs e)
