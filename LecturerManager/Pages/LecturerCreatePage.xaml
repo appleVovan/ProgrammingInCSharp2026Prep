@@ -4,6 +4,13 @@
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerCreatePage"
              Title="Lecturer Create Page">
     <VerticalStackLayout>
-        
+        <Label
+            Text="First Name"/>
+        <Entry
+            Placeholder="First Name"></Entry>
+        <Label
+            Text="Last Name"/>
+        <Entry
+            Placeholder="Last Name"></Entry>
     </VerticalStackLayout>
 </ContentPage>
