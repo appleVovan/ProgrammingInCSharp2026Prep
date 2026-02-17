@@ -18,9 +18,19 @@
                     Padding="10"
                     Margin="0,10">
                     <VerticalStackLayout>
-                        <Label Text="{Binding Name}"></Label>
-                        <Label Text="{Binding StaffDesc}"></Label>
-                        <Label Text="{Binding Faculty, Converter={StaticResource EnumToDisplayName}}"></Label>
+                        <Label
+                            Style="{StaticResource SubHeadline}">
+                            <Label.Text>
+                                <MultiBinding
+                                    StringFormat="{}{0} (Staff: {1})">
+                                    <Binding Path="Name"></Binding>
+                                    <Binding Path="StaffDesc"></Binding>
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                        <Label 
+                            Text="{Binding Faculty, Converter={StaticResource EnumToDisplayName}}"
+                            HorizontalOptions="Center"></Label>
                     </VerticalStackLayout>                    
                 </Border>
             </DataTemplate>
