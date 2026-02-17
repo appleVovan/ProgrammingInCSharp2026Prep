@@ -12,5 +12,9 @@
             Text="Last Name"/>
         <Entry
             Placeholder="Last Name"></Entry>
+        <Label
+            Text="Position"/>
+        <Picker
+            Title="Select Lecturer's position"></Picker>
     </VerticalStackLayout>
 </ContentPage>
