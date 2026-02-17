@@ -3,40 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerCreatePage"
              Title="Create new Lecturer">
-    <VerticalStackLayout Padding="10,20" Spacing="10">
-        <Label
-            Text="First Name"/>
-        <Entry
-            x:Name="eFirstName"
-            Placeholder="First Name"></Entry>
-        <Label
-            Text="Last Name"/>
-        <Entry
-            x:Name="eLastName"
-            Placeholder="Last Name"></Entry>
-        <Label
-            Text="Position"/>
-        <Picker
-            x:Name="pPosition"
-            ItemDisplayBinding="{Binding DisplayName}"            
-            Title="Select Lecturer's position"></Picker>
-        <Label
-            Text="Date of birth"/>
-        <DatePicker
-            x:Name="dpDoB"
-            Date="{x:Null}"></DatePicker>
-        <Grid
-            ColumnDefinitions="*,*" 
-            ColumnSpacing="10"
-            Padding="10">
-            <Button
-                Grid.Column="0"
-                Text="Create Lecturer"
-                Clicked="CreateClicked"></Button>
-            <Button
-                Grid.Column="1"
-                Text="Back"
-                Clicked="BackClicked"></Button>
-        </Grid>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="10,20" Spacing="10">
+            <Label
+                Text="First Name"/>
+            <Entry
+                x:Name="eFirstName"
+                Placeholder="First Name"></Entry>
+            <Label
+                Text="Last Name"/>
+            <Entry
+                x:Name="eLastName"
+                Placeholder="Last Name"></Entry>
+            <Label
+                Text="Position"/>
+            <Picker
+                x:Name="pPosition"
+                ItemDisplayBinding="{Binding DisplayName}"            
+                Title="Select Lecturer's position"></Picker>
+            <Label
+                Text="Date of birth"/>
+            <DatePicker
+                x:Name="dpDoB"
+                Date="{x:Null}"></DatePicker>
+            <Grid
+                ColumnDefinitions="*,*" 
+                ColumnSpacing="10"
+                Padding="10">
+                <Button
+                    Grid.Column="0"
+                    Text="Create Lecturer"
+                    Clicked="CreateClicked"></Button>
+                <Button
+                    Grid.Column="1"
+                    Text="Back"
+                    Clicked="BackClicked"></Button>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
