@@ -13,11 +13,14 @@ public partial class LecturerCreatePage : ContentPage
 
     private void CreateClicked(object sender, EventArgs e)
     {
-
+        if (String.IsNullOrWhiteSpace(eFirstName.Text))
+        {
+            DisplayAlert("Incomlete data!", "First Name can't be empty", "OK");
+        }
     }
 
     private void BackClicked(object sender, EventArgs e)
     {
-
+        //TODO: Navigate back
     }
 }
