@@ -18,6 +18,7 @@
             Text="Position"/>
         <Picker
             x:Name="pPosition"
+            ItemDisplayBinding="{Binding DisplayName}"            
             Title="Select Lecturer's position"></Picker>
         <Label
             Text="Date of birth"/>
