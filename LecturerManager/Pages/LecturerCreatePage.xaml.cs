@@ -16,6 +16,22 @@ public partial class LecturerCreatePage : ContentPage
         if (String.IsNullOrWhiteSpace(eFirstName.Text))
         {
             DisplayAlert("Incomlete data!", "First Name can't be empty", "OK");
+            return;
+        }
+        if (String.IsNullOrWhiteSpace(eLastName.Text))
+        {
+            DisplayAlert("Incomlete data!", "Last Name can't be empty", "OK");
+            return;
+        }
+        if (pPosition.SelectedItem == null)
+        {
+            DisplayAlert("Incomlete data!", "Position must be selected", "OK");
+            return;
+        }
+        if (dpDoB.Date == null)
+        {
+            DisplayAlert("Incomlete data!", "Date of birth mus be selected", "OK");
+            return;
         }
     }
 
