@@ -7,18 +7,22 @@
         <Label
             Text="First Name"/>
         <Entry
+            x:Name="eFirstName"
             Placeholder="First Name"></Entry>
         <Label
             Text="Last Name"/>
         <Entry
+            x:Name="eLastName"
             Placeholder="Last Name"></Entry>
         <Label
             Text="Position"/>
         <Picker
+            x:Name="pPosition"
             Title="Select Lecturer's position"></Picker>
         <Label
             Text="Date of birth"/>
         <DatePicker
+            x:Name="dpDoB"
             Date="{x:Null}"></DatePicker>
         <Grid
             ColumnDefinitions="*,*" 
