@@ -20,5 +20,16 @@
             Text="Date of birth"/>
         <DatePicker
             Date="{x:Null}"></DatePicker>
+        <Grid
+            ColumnDefinitions="*,*" 
+            ColumnSpacing="10"
+            Padding="10">
+            <Button
+                Grid.Column="0"
+                Text="Create Lecturer"></Button>
+            <Button
+                Grid.Column="1"
+                Text="Back"></Button>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
