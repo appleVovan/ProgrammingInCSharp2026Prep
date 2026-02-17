@@ -4,11 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager"
+    xmlns:pages="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Pages"
     Title="LecturerManager">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:Pages.LecturerCreatePage}"
-        Route="LecturerCreatePage" />
+        Title="Departments"
+        ContentTemplate="{DataTemplate pages:DepartmentsPage}"
+        Route="DepartmentsPage" />
 
 </Shell>
