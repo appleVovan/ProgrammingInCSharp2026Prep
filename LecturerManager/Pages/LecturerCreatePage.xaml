@@ -16,5 +16,9 @@
             Text="Position"/>
         <Picker
             Title="Select Lecturer's position"></Picker>
+        <Label
+            Text="Date of birth"/>
+        <DatePicker
+            Date="{x:Null}"></DatePicker>
     </VerticalStackLayout>
 </ContentPage>
