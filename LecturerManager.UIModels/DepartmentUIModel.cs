@@ -34,7 +34,12 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
         }
         public int Staff
         {
-            get => _lecturers?.Count ?? 0;
+            get => _lecturers?.Count ?? -1;
+        }
+
+        public string StaffDesc
+        {
+            get => Staff == -1 ? "Not Loaded" : Staff.ToString();
         }
         // Constructor used to create new Department
         public DepartmentUIModel()
@@ -42,7 +47,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
             _lecturers = new List<LecturerUIModel>();
         }
         // Constructor used to load existing Department for viewing/editing
-        public DepartmentUIModel(DepartmentDBModel dBModel):this()
+        public DepartmentUIModel(DepartmentDBModel dBModel)
         {
             _dbModel = dBModel;
             _name = dBModel.Name;
@@ -64,10 +69,11 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
 
         public void LoadLecturers(StorageService storage)
         {
-            if (Id == null || _lecturers.Count > 0)
+            if (Id == null || _lecturers != null)
             {
                 return;
             }
+            _lecturers = new List<LecturerUIModel>();
             foreach (var lecturerDBModel in storage.GetLecturers(Id.Value))
             {
                 _lecturers.Add(new LecturerUIModel(lecturerDBModel));
@@ -76,7 +82,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
 
         public override string ToString()
         {
-            return $"Department: {Name}, Faculty: {Faculty}, Staff: {Staff}";
+            return $"Department: {Name}, Faculty: {Faculty}, Staff: {StaffDesc}";
         }
     }
 }
