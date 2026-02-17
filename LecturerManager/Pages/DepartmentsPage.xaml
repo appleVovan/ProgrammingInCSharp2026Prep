@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Pages"
              xmlns:models="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;assembly=LecturerManager.UIModels"
+             xmlns:converters="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Tools.Converters"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.DepartmentsPage"             
              x:DataType="pages:DepartmentsPage"
              Title="Departments">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:EnumToDisplayNameConverter x:Key="EnumToDisplayName"></converters:EnumToDisplayNameConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <CollectionView
         ItemsSource="{Binding Path=Departments}"
         Margin="10"
@@ -20,7 +26,7 @@
                     <VerticalStackLayout>
                         <Label Text="{Binding Name}"></Label>
                         <Label Text="{Binding StaffDesc}"></Label>
-                        <Label Text="{Binding Faculty}"></Label>
+                        <Label Text="{Binding Faculty, Converter={StaticResource EnumToDisplayName}}"></Label>
                     </VerticalStackLayout>                    
                 </Border>
             </DataTemplate>
