@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.DepartmentsPage"
-             Title="DepartmentsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:pages="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Pages"
+             x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.DepartmentsPage"             
+             x:DataType="pages:DepartmentsPage"
+             Title="Departments">
+    <CollectionView
+        ItemsSource="{Binding Path=Departments}">
+    </CollectionView>
 </ContentPage>
