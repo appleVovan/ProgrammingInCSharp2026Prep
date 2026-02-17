@@ -68,6 +68,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\LecturerManager.CommonComponents\LecturerManager.CommonComponents.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="Pages\LecturerCreatePage.xaml.cs">
 	    <DependentUpon>LecturerCreatePage.xaml</DependentUpon>
 	  </Compile>
