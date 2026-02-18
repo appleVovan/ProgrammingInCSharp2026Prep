@@ -14,6 +14,7 @@ public partial class DepartmentDetailsPage : ContentPage
         set
         {
             _currentDepartment = value;
+            _currentDepartment.LoadLecturers();
             BindingContext = CurrentDepartment;
         }
     }

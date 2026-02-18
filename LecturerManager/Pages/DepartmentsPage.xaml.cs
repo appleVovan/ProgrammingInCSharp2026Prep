@@ -6,16 +6,16 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 
 public partial class DepartmentsPage : ContentPage
 {
-	private StorageService _storage;
+	private IStorageService _storage;
 	public ObservableCollection<DepartmentUIModel> Departments { get; set; }
-	public DepartmentsPage()
+	public DepartmentsPage(IStorageService storage)
 	{
 		InitializeComponent();
-		_storage = new StorageService();
+		_storage = storage;
 		Departments = new ObservableCollection<DepartmentUIModel>();
 		foreach (var department in _storage.GetAllDepartments())
 		{
-			Departments.Add(new DepartmentUIModel(department));
+			Departments.Add(new DepartmentUIModel(storage, department));
 		}
 		BindingContext = this;
 	}

@@ -13,6 +13,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
         private string _name;
         private Faculty _faculty;
         private List<LecturerUIModel> _lecturers;
+        private IStorageService _storage;
 
         public Guid? Id
         {
@@ -42,13 +43,15 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
             get => Staff == -1 ? "Not Loaded" : Staff.ToString();
         }
         // Constructor used to create new Department
-        public DepartmentUIModel()
+        public DepartmentUIModel(IStorageService storage)
         {
+            _storage = storage;
             _lecturers = new List<LecturerUIModel>();
         }
         // Constructor used to load existing Department for viewing/editing
-        public DepartmentUIModel(DepartmentDBModel dBModel)
+        public DepartmentUIModel(IStorageService storage, DepartmentDBModel dBModel)
         {
+            _storage = storage;
             _dbModel = dBModel;
             _name = dBModel.Name;
             _faculty = dBModel.Faculty;
@@ -67,14 +70,14 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
             }
         }
 
-        public void LoadLecturers(StorageService storage)
+        public void LoadLecturers()
         {
             if (Id == null || _lecturers != null)
             {
                 return;
             }
             _lecturers = new List<LecturerUIModel>();
-            foreach (var lecturerDBModel in storage.GetLecturers(Id.Value))
+            foreach (var lecturerDBModel in _storage.GetLecturers(Id.Value))
             {
                 _lecturers.Add(new LecturerUIModel(lecturerDBModel));
             }
