@@ -4,7 +4,7 @@ using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 
 [QueryProperty(nameof(CurrentDepartment), "SelectedDepartment")]
-public partial class DepartmentDetailsPage : ContentPage, IQueryAttributable
+public partial class DepartmentDetailsPage : ContentPage
 {
     private DepartmentUIModel _currentDepartment;
 
@@ -22,14 +22,4 @@ public partial class DepartmentDetailsPage : ContentPage, IQueryAttributable
 		InitializeComponent();
     }
 
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    {
-        base.OnNavigatedTo(args);
-        BindingContext = CurrentDepartment;
-    }
-
-    public void ApplyQueryAttributes(IDictionary<string, object> query)
-    {
-        CurrentDepartment = query["SelectedDepartment"] as DepartmentUIModel;
-    }
 }
