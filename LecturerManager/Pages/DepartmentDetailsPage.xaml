@@ -19,5 +19,35 @@
         <Label 
             Text="{Binding Faculty, Converter={StaticResource EnumToDisplayName}}"
             HorizontalOptions="Center"></Label>
+        <CollectionView
+            ItemsSource="{Binding Lecturers}"
+            Margin="10"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate
+                    x:DataType="models:LecturerUIModel">
+                    <Border
+                        Stroke="Magenta"
+                        Padding="10"
+                        Margin="0,10">
+                        <VerticalStackLayout>
+                            <Label
+                                Style="{StaticResource SubHeadline}">
+                                <Label.Text>
+                                    <MultiBinding
+                                        StringFormat="{}{0} {1})">
+                                        <Binding Path="FirstName"></Binding>
+                                        <Binding Path="LastName"></Binding>
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                            <Label 
+                                Text="{Binding Position, Converter={StaticResource EnumToDisplayName}, StringFormat='Position: {0}'}"
+                                HorizontalOptions="Center"></Label>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
