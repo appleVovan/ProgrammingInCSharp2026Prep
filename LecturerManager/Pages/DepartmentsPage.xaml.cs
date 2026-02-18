@@ -23,5 +23,8 @@ public partial class DepartmentsPage : ContentPage
     private void DepartmentSelected(object sender, SelectionChangedEventArgs e)
     {
 		var department = (DepartmentUIModel)e.CurrentSelection[0];
+
+		Shell.Current.GoToAsync($"DepartmentDetails");
     }
+
 }
