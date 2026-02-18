@@ -9,7 +9,8 @@
     <CollectionView
         ItemsSource="{Binding Path=Departments}"
         Margin="10"
-        SelectionMode="Single">
+        SelectionMode="Single"
+        SelectionChanged="DepartmentSelected">
         <CollectionView.ItemTemplate>
             <DataTemplate
                 x:DataType="models:DepartmentUIModel">

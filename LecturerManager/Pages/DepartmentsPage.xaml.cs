@@ -19,4 +19,9 @@ public partial class DepartmentsPage : ContentPage
 		}
 		BindingContext = this;
 	}
+
+    private void DepartmentSelected(object sender, SelectionChangedEventArgs e)
+    {
+		var department = (DepartmentUIModel)e.CurrentSelection[0];
+    }
 }
