@@ -3,15 +3,33 @@ using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 
-public partial class DepartmentDetailsPage : ContentPage
+[QueryProperty(nameof(CurrentDepartment), "SelectedDepartment")]
+public partial class DepartmentDetailsPage : ContentPage, IQueryAttributable
 {
-    public DepartmentUIModel CurrentDepartment { get; set; }
+    private DepartmentUIModel _currentDepartment;
+
+    public DepartmentUIModel CurrentDepartment
+    {
+        get => _currentDepartment;
+        set
+        {
+            _currentDepartment = value;
+            BindingContext = CurrentDepartment;
+        }
+    }
     public DepartmentDetailsPage()
 	{
 		InitializeComponent();
-		var storage = new StorageService();
-		var department = storage.GetAllDepartments().FirstOrDefault();
-		CurrentDepartment = new DepartmentUIModel(department);
-		BindingContext = CurrentDepartment;
+    }
+
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
+        BindingContext = CurrentDepartment;
+    }
+
+    public void ApplyQueryAttributes(IDictionary<string, object> query)
+    {
+        CurrentDepartment = query["SelectedDepartment"] as DepartmentUIModel;
     }
 }
