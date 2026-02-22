@@ -23,4 +23,9 @@ public partial class DepartmentDetailsPage : ContentPage
 		InitializeComponent();
     }
 
+    private void LecturerSelected(object sender, SelectionChangedEventArgs e)
+    {
+        var lecturer = (LecturerUIModel)e.CurrentSelection[0];
+        Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "SelectedLecturer", lecturer } });
+    }
 }
