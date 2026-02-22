@@ -1,7 +1,7 @@
 ﻿using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
 using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 
-namespace LecturerManagerConsole
+namespace KMA.ProgrammingInCSharp2026.LecturerManager.ConsoleApp
 {
     internal class Program
     {
@@ -20,7 +20,7 @@ namespace LecturerManagerConsole
         {
             Console.WriteLine("Hello and welcome to the Lecturer Manager Console App!");
             _storageService = new StorageService();
-            string? command = null;
+            string command = null;
             while (_appState != AppState.Exit)
             {
                 switch (_appState)
@@ -38,7 +38,7 @@ namespace LecturerManagerConsole
             }
         }
 
-        private static void UpdateState(string? command)
+        private static void UpdateState(string command)
         {
             switch (command)
             {
@@ -86,7 +86,7 @@ namespace LecturerManagerConsole
             }
         }
 
-        private static void DepartmentDetailsState(string? departmentName)
+        private static void DepartmentDetailsState(string departmentName)
         {
             bool departmentExists = false;
             foreach (var department in _departments)

@@ -34,11 +34,13 @@ public partial class LecturerCreatePage : ContentPage
             DisplayAlert("Incomlete data!", "Date of birth mus be selected", "OK");
             return;
         }
-        var lecturer = new LecturerUIModel(Guid.Empty);
-        lecturer.FirstName = eFirstName.Text;
-        lecturer.LastName = eLastName.Text;
-        lecturer.Position = ((EnumWithName<LecturerPosition>)pPosition.SelectedItem).Value;
-        lecturer.DateOfBirth = dpDoB.Date.Value;
+        var lecturer = new LecturerUIModel(Guid.Empty)
+        {
+            FirstName = eFirstName.Text,
+            LastName = eLastName.Text,
+            Position = ((EnumWithName<LecturerPosition>)pPosition.SelectedItem).Value,
+            DateOfBirth = dpDoB.Date.Value
+        };
         lecturer.SaveChangesToDBModel();
         DisplayAlert("Lecturer Created!", $"Lecturer {lecturer.FirstName} {lecturer.LastName} was created successfully, his age is {lecturer.Age}", "OK");
     }

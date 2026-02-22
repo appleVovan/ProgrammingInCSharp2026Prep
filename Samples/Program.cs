@@ -28,7 +28,9 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #region Variable Initialization Examples
         static void Sample2()
         {
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
             циферка i, j, k;
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
             i = j = k = 0;
         }
         #endregion
