@@ -24,7 +24,7 @@ public partial class DepartmentsPage : ContentPage
     {
 		var department = (DepartmentUIModel)e.CurrentSelection[0];
 
-		Shell.Current.GoToAsync($"DepartmentDetails", new Dictionary<string, object> { { "SelectedDepartment", department } });
+		Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "SelectedDepartment", department } });
     }
 
 }
