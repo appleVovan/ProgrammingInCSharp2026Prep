@@ -41,12 +41,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
 
         public IEnumerable<DepartmentDBModel> GetDepartments()
         {
-            var result = new List<DepartmentDBModel>();
             foreach (var department in _departments)
             {
-                 result.Add(new DepartmentDBModel(department.Id, department.Name, department.Faculty));
+                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty);
             }
-            return result;
         }
 
         public IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId)
