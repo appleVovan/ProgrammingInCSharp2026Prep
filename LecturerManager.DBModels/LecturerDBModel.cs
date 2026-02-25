@@ -22,7 +22,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.DBModels
         }
         public LecturerDBModel(Guid id, Guid departmentId, string firstName, string lastName, LecturerPosition position, DateTime dateOfBirth)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             DepartmentId = departmentId;
             FirstName = firstName;
             LastName = lastName;
