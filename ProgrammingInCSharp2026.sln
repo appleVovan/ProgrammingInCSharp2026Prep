@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManager.Repostory", "LecturerManager.Repostory\LecturerManager.Repostory.csproj", "{39710C33-C6A5-46EB-B9A6-CB9D5179456E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManager.Repository", "LecturerManager.Repostory\LecturerManager.Repository.csproj", "{39710C33-C6A5-46EB-B9A6-CB9D5179456E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

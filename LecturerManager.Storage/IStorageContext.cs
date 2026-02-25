@@ -9,5 +9,6 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
     {
         IEnumerable<DepartmentDBModel> GetDepartments();
         IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId);
+        int GetLecturersByDepartmentCount(Guid id);
     }
 }

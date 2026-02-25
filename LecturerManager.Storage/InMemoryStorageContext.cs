@@ -52,5 +52,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         {
             return _lecturers.Where(lecturer => lecturer.DepartmentId == departmentId).Select(lecturer => new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate));
         }
+
+        public int GetLecturersByDepartmentCount(Guid id)
+        {
+            return _lecturers.Count(lecturer => lecturer.DepartmentId == id);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
+using KMA.ProgrammingInCSharp2026.LecturerManager.Repository;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Storage;
 using Microsoft.Extensions.Logging;
@@ -22,6 +23,8 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
     		builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<IStorageContext, InMemoryStorageContext>();
+            builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
+            builder.Services.AddSingleton<ILecturerRepository, LecturerRepository>();
 
             builder.Services.AddSingleton<IStorageService, StorageService>();
 
