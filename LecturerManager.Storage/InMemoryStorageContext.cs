@@ -3,6 +3,7 @@ using KMA.ProgrammingInCSharp2026.LecturerManager.DBModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
 {
@@ -49,13 +50,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
 
         public IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId)
         {
-            foreach (var lecturer in _lecturers)
-            {
-                if (lecturer.DepartmentId == departmentId)
-                {
-                    yield return new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate);
-                }
-            }
+            return _lecturers.Where(lecturer => lecturer.DepartmentId == departmentId).Select(lecturer => new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate));
         }
     }
 }
