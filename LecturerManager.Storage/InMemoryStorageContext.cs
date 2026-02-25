@@ -49,7 +49,13 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
 
         public IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId)
         {
-            throw new NotImplementedException();
+            foreach (var lecturer in _lecturers)
+            {
+                if (lecturer.DepartmentId == departmentId)
+                {
+                    yield return new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate);
+                }
+            }
         }
     }
 }
