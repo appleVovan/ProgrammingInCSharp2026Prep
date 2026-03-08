@@ -25,5 +25,11 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
                 yield return new DepartmentListDTO(department.Id, department.Name, department.Faculty, lecturersCount);
             }
         }
+
+        public DepartmentDetailsDTO GetDepartment(Guid departmentId)
+        {
+            var department = _departmentRepository.GetDepartment(departmentId);
+            return new DepartmentDetailsDTO(department.Id, department.Name, department.Faculty, department.Email);
+        }
     }
 }
