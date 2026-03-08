@@ -1,11 +1,12 @@
-﻿using System;
+﻿using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Depratment;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
 {
-    internal interface IDepartmentService
+    public interface IDepartmentService
     {
-        public IEnumerable<> GetAllDepartments();
+        public IEnumerable<DepartmentListDTO> GetAllDepartments();
     }
 }
