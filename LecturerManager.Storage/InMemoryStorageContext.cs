@@ -10,7 +10,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
     public class InMemoryStorageContext : IStorageContext
     {
         
-        private record class DepartmentRecord(Guid Id, string Name, Faculty Faculty);
+        private record class DepartmentRecord(Guid Id, string Name, Faculty Faculty, string email);
         private record class LecturerRecord(Guid Id, Guid DepartmentId, string FirstName, string LastName, LecturerPosition Position, DateTime BirthDate);
 
         private static readonly List<DepartmentRecord> _departments = new List<DepartmentRecord>();
@@ -19,9 +19,9 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         #region MockStoragePopulation
         static InMemoryStorageContext()
         {
-            var departmentOfMath = new DepartmentRecord(Guid.NewGuid(), "Mathematics", Faculty.FacultyOfInformatics);
-            var departmentOfInformatics = new DepartmentRecord(Guid.NewGuid(), "Informatics", Faculty.FacultyOfInformatics);
-            var departmentOfPhysics = new DepartmentRecord(Guid.NewGuid(), "Physics", Faculty.FacultyOfNaturalSciences);
+            var departmentOfMath = new DepartmentRecord(Guid.NewGuid(), "Mathematics", Faculty.FacultyOfInformatics, "math_fin@ukma.edu.ua");
+            var departmentOfInformatics = new DepartmentRecord(Guid.NewGuid(), "Informatics", Faculty.FacultyOfInformatics, "math_fin@ukma.edu.ua");
+            var departmentOfPhysics = new DepartmentRecord(Guid.NewGuid(), "Physics", Faculty.FacultyOfNaturalSciences, "physics_fprn@ukma.edu.ua");
             _departments.Add(departmentOfMath);
             _departments.Add(departmentOfInformatics);
             _departments.Add(departmentOfPhysics);
@@ -44,7 +44,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         {
             foreach (var department in _departments)
             {
-                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty);
+                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.email);
             }
         }
 

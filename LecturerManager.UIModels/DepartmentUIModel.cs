@@ -67,7 +67,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.UIModels
             }
             else
             {
-                _dbModel = new DepartmentDBModel(_name, _faculty);
+                _dbModel = new DepartmentDBModel(_name, _faculty,"");
             }
         }
 

@@ -11,15 +11,18 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.DBModels
         public Guid Id { get; }
         public string Name { get; set; }
         public Faculty Faculty { get; set; }
+        public string Email { get; set; }
 
-        public DepartmentDBModel(string name, Faculty faculty) : this(Guid.NewGuid(), name, faculty)
+        public DepartmentDBModel(string name, Faculty faculty, string email) : this(Guid.NewGuid(), name, faculty, email)
         {
+            
         }
-        public DepartmentDBModel(Guid id, string name, Faculty faculty)
+        public DepartmentDBModel(Guid id, string name, Faculty faculty, string email)
         {
             Id = id;
             Name = name;
             Faculty = faculty;
+            Email = email;
         }
     }
 }
