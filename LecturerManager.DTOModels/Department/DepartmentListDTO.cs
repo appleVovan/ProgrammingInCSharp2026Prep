@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Depratment
+namespace KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department
 {
     public class DepartmentListDTO
     {

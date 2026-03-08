@@ -2,6 +2,7 @@
 using KMA.ProgrammingInCSharp2026.LecturerManager.Repository;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Storage;
+using KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager
@@ -32,6 +33,8 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
             builder.Services.AddSingleton<DepartmentsPage>();
             builder.Services.AddTransient<DepartmentDetailsPage>();
             builder.Services.AddTransient<LecturerDetailsPage>();
+
+            builder.Services.AddSingleton<DepartmentsViewModel>();
 
             return builder.Build();
         }

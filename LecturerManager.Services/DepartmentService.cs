@@ -1,4 +1,4 @@
-﻿using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Depratment;
+﻿using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Repository;
 using System;
 using System.Collections.Generic;
