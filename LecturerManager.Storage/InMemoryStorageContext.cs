@@ -57,5 +57,11 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         {
             return _lecturers.Count(lecturer => lecturer.DepartmentId == id);
         }
+
+        public DepartmentDBModel GetDepartment(Guid departmentGuid)
+        {
+            var department = _departments.FirstOrDefault(department => department.Id == departmentGuid);
+            return department is null ? null : new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.email);
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
     public interface IStorageContext
     {
         IEnumerable<DepartmentDBModel> GetDepartments();
+        DepartmentDBModel GetDepartment(Guid departmentGuid);
         IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId);
         int GetLecturersByDepartmentCount(Guid id);
     }
