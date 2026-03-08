@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManager.Repository", "LecturerManager.Repostory\LecturerManager.Repository.csproj", "{39710C33-C6A5-46EB-B9A6-CB9D5179456E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerManager.DTOModels", "LecturerManager.DTOModels\LecturerManager.DTOModels.csproj", "{D1723606-AAD0-448E-A7C9-A41E508E5FBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,7 @@ Global
 		{1DC5EABE-061E-4071-8866-0D65BA2430E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907B2632-6796-46BF-8DB5-C197E3E48E83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{769F4C37-3F0E-4CCF-B0AF-D876B9DF0EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -68,6 +71,10 @@ Global
 		{39710C33-C6A5-46EB-B9A6-CB9D5179456E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39710C33-C6A5-46EB-B9A6-CB9D5179456E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39710C33-C6A5-46EB-B9A6-CB9D5179456E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1723606-AAD0-448E-A7C9-A41E508E5FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1723606-AAD0-448E-A7C9-A41E508E5FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1723606-AAD0-448E-A7C9-A41E508E5FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1723606-AAD0-448E-A7C9-A41E508E5FBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
