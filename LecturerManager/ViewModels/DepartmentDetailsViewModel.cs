@@ -23,7 +23,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             set
             {
                 _currentDepartment = value;
-                OnPropertyChanged("CurrentDepartment");
+                OnPropertyChanged(nameof(CurrentDepartment));
             }
         }
         public DepartmentDetailsViewModel(IDepartmentService departmentService)
