@@ -35,6 +35,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
             builder.Services.AddTransient<LecturerDetailsPage>();
 
             builder.Services.AddSingleton<DepartmentsViewModel>();
+            builder.Services.AddTransient<DepartmentDetailsViewModel>();
 
             return builder.Build();
         }

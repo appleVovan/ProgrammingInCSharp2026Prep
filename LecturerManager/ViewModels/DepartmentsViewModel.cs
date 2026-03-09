@@ -13,17 +13,19 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
     {
         private readonly IDepartmentService _departmentService;
         public ObservableCollection<DepartmentListDTO> Departments { get; set; }
+        public DepartmentListDTO CurrentDepartment { get; set; }
+        public Command DepartmentSelectedCommand { get; }
         public DepartmentsViewModel(IDepartmentService departmentService)
         {
             _departmentService = departmentService;
             Departments = new ObservableCollection<DepartmentListDTO>(_departmentService.GetAllDepartments());
+            DepartmentSelectedCommand = new Command(LoadDepartment);
         }
 
         private void LoadDepartment()
         {
-            //var department = (DepartmentUIModel)e.CurrentSelection[0];
-
-            //Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "SelectedDepartment", department } });
+            if (CurrentDepartment != null)
+                Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } });
         }
     }
 }
