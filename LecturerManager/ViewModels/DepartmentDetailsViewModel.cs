@@ -4,7 +4,6 @@ using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;
 using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Lecturer;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
-using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

@@ -10,7 +10,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
     public class InMemoryStorageContext : IStorageContext
     {
         
-        private record class DepartmentRecord(Guid Id, string Name, Faculty Faculty, string email);
+        private record class DepartmentRecord(Guid Id, string Name, Faculty Faculty, string Email);
         private record class LecturerRecord(Guid Id, Guid DepartmentId, string FirstName, string LastName, LecturerPosition Position, DateTime BirthDate);
 
         private static readonly List<DepartmentRecord> _departments = new List<DepartmentRecord>();
@@ -44,7 +44,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         {
             foreach (var department in _departments)
             {
-                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.email);
+                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
             }
         }
 
@@ -61,7 +61,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         public DepartmentDBModel GetDepartment(Guid departmentGuid)
         {
             var department = _departments.FirstOrDefault(department => department.Id == departmentGuid);
-            return department is null ? null : new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.email);
+            return department is null ? null : new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
         }
 
         public LecturerDBModel GetLecturer(Guid lecturerGuid)

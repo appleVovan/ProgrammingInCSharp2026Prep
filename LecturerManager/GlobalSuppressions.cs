@@ -5,6 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0290:Use primary constructor", Justification = "<Pending>", Scope = "member", Target = "~M:KMA.ProgrammingInCSharp2026.LecturerManager.MainApplication.#ctor(System.IntPtr,Android.Runtime.JniHandleOwnership)")]
-[assembly: SuppressMessage("Style", "IDE0028:Simplify collection initialization", Justification = "<Pending>", Scope = "member", Target = "~M:KMA.ProgrammingInCSharp2026.LecturerManager.Pages.DepartmentsPage.#ctor(KMA.ProgrammingInCSharp2026.LecturerManager.Services.IStorageService)")]
 [assembly: SuppressMessage("MVVMTK", "MVVMTK0045", Justification = "AOT not required for this project")]
