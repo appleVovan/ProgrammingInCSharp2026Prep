@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;
 using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Lecturer;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
@@ -36,10 +37,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             Lecturers = new ObservableCollection<LecturerListDTO>(_lecturerService.GetLecturersByDepartment(departmentId));
         }
 
-        //private void LecturerSelected(object sender, SelectionChangedEventArgs e)
-        //{
-        //    var lecturer = (LecturerUIModel)e.CurrentSelection[0];
-        //    Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "SelectedLecturer", lecturer } });
-        //}
+        [RelayCommand]
+        private void LoadLecturer(Guid lecturerId)
+        {
+            Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "LecturerId", lecturerId } });
+        }
     }
 }
