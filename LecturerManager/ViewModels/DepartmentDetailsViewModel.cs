@@ -4,15 +4,18 @@ using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
 using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 {
-    public class DepartmentDetailsViewModel : IQueryAttributable
+    public class DepartmentDetailsViewModel : IQueryAttributable, INotifyPropertyChanged
     {
         private readonly IDepartmentService _departmentService;
 
         private DepartmentDetailsDTO _currentDepartment;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public DepartmentDetailsDTO CurrentDepartment
         {
@@ -20,6 +23,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             set
             {
                 _currentDepartment = value;
+                OnPropertyChanged("CurrentDepartment");
             }
         }
         public DepartmentDetailsViewModel(IDepartmentService departmentService)
@@ -38,5 +42,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         //    var lecturer = (LecturerUIModel)e.CurrentSelection[0];
         //    Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "SelectedLecturer", lecturer } });
         //}
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
