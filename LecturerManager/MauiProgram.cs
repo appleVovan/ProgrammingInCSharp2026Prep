@@ -27,6 +27,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
             builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
             builder.Services.AddSingleton<ILecturerRepository, LecturerRepository>();
             builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
+            builder.Services.AddSingleton<ILecturerService, LecturerService>();
 
             builder.Services.AddSingleton<IStorageService, StorageService>();
 

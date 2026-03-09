@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Pages"
-             xmlns:models="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;assembly=LecturerManager.DTOModels"
+             xmlns:models="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Lecturer;assembly=LecturerManager.DTOModels"
              xmlns:vms="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.DepartmentDetailsPage"
              x:DataType="vms:DepartmentDetailsViewModel"
@@ -26,7 +26,7 @@
                     HorizontalOptions="Center"/>
             </VerticalStackLayout>
         </Border>
-        <!--<Border 
+        <Border 
             Grid.Row="1"
             VerticalOptions="Fill" 
             Stroke="Blue" 
@@ -35,11 +35,10 @@
             <CollectionView
                 ItemsSource="{Binding Lecturers}"
                 Margin="10"
-                SelectionMode="Single"
-                SelectionChanged="LecturerSelected">
+                SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate
-                            x:DataType="models:LecturerUIModel">
+                            x:DataType="models:LecturerListDTO">
                         <Border
                                 Stroke="Magenta"
                                 Padding="10"
@@ -63,6 +62,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </Border>-->
+        </Border>
     </Grid>
 </ContentPage>
