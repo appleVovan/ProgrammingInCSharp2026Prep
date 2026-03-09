@@ -5,6 +5,7 @@ using KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
@@ -23,7 +24,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             set
             {
                 _currentDepartment = value;
-                OnPropertyChanged(nameof(CurrentDepartment));
+                OnPropertyChanged();
             }
         }
         public DepartmentDetailsViewModel(IDepartmentService departmentService)
@@ -43,7 +44,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         //    Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "SelectedLecturer", lecturer } });
         //}
 
-        public void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
