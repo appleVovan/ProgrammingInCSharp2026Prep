@@ -12,26 +12,16 @@ using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
-{
-    [INotifyPropertyChanged]
-    public partial class DepartmentDetailsViewModel : IQueryAttributable
+{    
+    public partial class DepartmentDetailsViewModel : ObservableObject, IQueryAttributable
     {
         private readonly IDepartmentService _departmentService;
         private readonly ILecturerService _lecturerService;
 
+        [ObservableProperty]
         private DepartmentDetailsDTO _currentDepartment;
-
-        public DepartmentDetailsDTO CurrentDepartment
-        {
-            get => _currentDepartment;
-            set
-            {
-                _currentDepartment = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<LecturerListDTO> Lecturers { get; set; }
+        [ObservableProperty]
+        private ObservableCollection<LecturerListDTO> _lecturers;
 
         public DepartmentDetailsViewModel(IDepartmentService departmentService, ILecturerService lecturerService)
         {
@@ -44,7 +34,6 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             var departmentId = (Guid)query["DepartmentId"];
             CurrentDepartment = _departmentService.GetDepartment(departmentId);
             Lecturers = new ObservableCollection<LecturerListDTO>(_lecturerService.GetLecturersByDepartment(departmentId));
-            OnPropertyChanged(nameof(Lecturers));
         }
 
         //private void LecturerSelected(object sender, SelectionChangedEventArgs e)
