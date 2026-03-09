@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.UIModels;assembly=LecturerManager.UIModels"
+             xmlns:pages="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Pages"
+             xmlns:models="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;assembly=LecturerManager.DTOModels"
+             xmlns:vms="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerDetailsPage"
-             x:DataType="models:LecturerUIModel"
+             x:DataType="vms:LecturerDetailsViewModel"
              Title="LecturerDetailsPage">
     <ScrollView>
         <VerticalStackLayout Padding="10,20" Spacing="10">
@@ -27,6 +29,12 @@
             <Label
                 Text="{Binding DateOfBirth, StringFormat='{0:MMMM dd, yyyy}'}"
                 Margin="10,0"></Label>
+            <Label
+                Text="Age"/>
+            <Label
+                Text="{Binding Age}"
+                Margin="10,0"></Label>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

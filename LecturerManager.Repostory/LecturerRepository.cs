@@ -19,6 +19,11 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Repository
             return _storageContext.GetLecturersByDepartment(id);
         }
 
+        public LecturerDBModel GetLecturer(Guid lecturerId)
+        {
+            return _storageContext.GetLecturer(lecturerId);
+        }
+
         public int GetLecturersByDepartmentCount(Guid id)
         {
             return _storageContext.GetLecturersByDepartmentCount(id);
