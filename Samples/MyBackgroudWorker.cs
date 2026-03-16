@@ -29,6 +29,10 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             //Process inputParams
             while (_isRunning)
             {
+                if (!GetNextTask())
+                {
+                    continue;
+                }
                 //Perform Step1
                 if (!_isRunning)
                 {
@@ -44,6 +48,12 @@ namespace KMA.ProgrammingInCSharp2026.Samples
                 //Perform Step3
             }
             _outputPrams = new Tuple<string, bool>("Result", true);
+        }
+
+        private bool GetNextTask()
+        {
+            //Get next task
+            return true;
         }
     }
         
