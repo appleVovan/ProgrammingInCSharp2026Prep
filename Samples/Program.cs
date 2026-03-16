@@ -229,14 +229,14 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             Thread myParalleOperation = new Thread(MyParallelMethod);
 
-            myParalleOperation.Start();
+            myParalleOperation.Start(new object());
 
             //Perform some in main thread
 
             myParalleOperation.Join();            
         }
 
-        private static void MyParallelMethod()
+        private static void MyParallelMethod(object obj)
         {
             //Perform some operation in parallel thread
         }
