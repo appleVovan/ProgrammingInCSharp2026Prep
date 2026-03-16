@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample15();
+            Sample16();
         }
 
         #region Initialization in C# Examples
@@ -221,6 +221,24 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             animalBasenji.Speak();
             ((Dog)animalBasenji).Speak();
             ((Basenji)animalBasenji).Speak();
+        }
+        #endregion
+
+        #region Threading
+        static void Sample16() 
+        {
+            Thread myParalleOperation = new Thread(MyParallelMethod);
+
+            myParalleOperation.Start();
+
+            //Perform some in main thread
+
+            myParalleOperation.Join();            
+        }
+
+        private static void MyParallelMethod()
+        {
+            //Perform some operation in parallel thread
         }
         #endregion
     }
