@@ -225,31 +225,24 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         #endregion
 
         #region Threading
-        private static Tuple<string, int, double> _inputPrams;
-        private static Tuple<string, bool> _outputPrams;
+        
 
         static void Sample16() 
         {
-            Thread myParalleOperation = new Thread(MyParallelMethod);
+            var backgroundWorker = new MyBackgroudWorker("Test", 5, 3.14);
+            Thread myParalleOperation = new Thread(backgroundWorker.Process);
 
-            _inputPrams = new Tuple<string, int, double>("Test", 5, 3.14);
             myParalleOperation.Start(new object());
 
             //Perform some in main thread
 
             myParalleOperation.Join();
 
-            //process _outputPrams
-            Console.WriteLine(_outputPrams.Item2);
+            //process OutputPrams
+            Console.WriteLine(backgroundWorker.OutputPrams.Item2);
         }
 
-        private static void MyParallelMethod()
-        {
-            var inputParams = _inputPrams;
-            //Process inputParams
-            //Perform some operation in parallel thread
-            _outputPrams = new Tuple<string, bool>("Result", true);
-        }
+        
         #endregion
     }
 }
