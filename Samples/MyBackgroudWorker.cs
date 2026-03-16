@@ -29,7 +29,19 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             //Process inputParams
             while (_isRunning)
             {
-                //Perform some operation in parallel thread
+                //Perform Step1
+                if (!_isRunning)
+                {
+                    //End processing and step 2
+                    break;
+                }
+                //Perform Step2
+                if (!_isRunning)
+                {
+                    //End processing and step 3
+                    break;
+                }
+                //Perform Step3
             }
             _outputPrams = new Tuple<string, bool>("Result", true);
         }

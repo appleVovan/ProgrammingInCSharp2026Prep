@@ -237,7 +237,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             //Perform some in main thread
 
             backgroundWorker.Stop();
-            myParalleOperation.Join();
+            myParalleOperation.Join(5000);
 
             //process OutputPrams
             Console.WriteLine(backgroundWorker.OutputPrams.Item2);
