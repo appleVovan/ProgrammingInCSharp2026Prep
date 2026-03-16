@@ -31,6 +31,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             {
                 if (!GetNextTask())
                 {
+                    Thread.Sleep(10000);
                     continue;
                 }
                 //Perform Step1
