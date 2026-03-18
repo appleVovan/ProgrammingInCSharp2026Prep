@@ -31,7 +31,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             return res;
         }
 
-        public async void RunAsync()
+        public async Task RunAsync()
         {
             Console.WriteLine($"3 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             var task = RunLongOperationAsync();
