@@ -253,18 +253,18 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine($"1 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             var asyncSample = new AsyncSample();
             Console.WriteLine($"2 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            var task = asyncSample.RunAsync();            
+            Console.WriteLine($"11 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
+            Console.WriteLine($"12 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"13 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             try
             {
-                asyncSample.RunAsync();
+                task.Wait();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"{ex.Message}.Thread: {Thread.CurrentThread.ManagedThreadId}");
             }
-            Console.WriteLine($"11 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
-            Console.WriteLine($"12 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
-            Console.WriteLine($"13 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
-            Thread.Sleep(10000);
             Console.WriteLine($"14 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
         }
         #endregion
