@@ -10,6 +10,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             Console.WriteLine($"4 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             var task = Task.Run(RunLongOperation);
+            Thread.Sleep(1000);
             Console.WriteLine($"8 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             return task;
         }
@@ -33,6 +34,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine($"3 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             var task = RunLongOperationAsync();
             Console.WriteLine($"9 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
+            Console.WriteLine($"Result is {task.Result}");
         }
     }
 }
