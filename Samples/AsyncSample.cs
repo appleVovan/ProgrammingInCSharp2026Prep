@@ -19,13 +19,14 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             int res = 0;
             Console.WriteLine($"5 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            throw new Exception("Test exception");
             for (int i = 0; i < 5; i++)
-            {
-                //throw new Exception("Test exception");
+            {                
                 Console.WriteLine($"6.{i} Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
                 Thread.Sleep(1000);
                 res += 1000;
             }
+            
             Console.WriteLine($"7 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             return res;
         }
