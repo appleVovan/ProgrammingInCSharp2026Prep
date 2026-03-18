@@ -257,6 +257,8 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine($"11 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
             Console.WriteLine($"12 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             Console.WriteLine($"13 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            Thread.Sleep(7000);
+            Console.WriteLine($"14 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
         }
         #endregion
     }
