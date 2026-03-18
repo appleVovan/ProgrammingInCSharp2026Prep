@@ -43,6 +43,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             catch (Exception ex)
             {
                 Console.WriteLine($"{ex.Message}.Thread: { Thread.CurrentThread.ManagedThreadId}");
+                throw;
             }
             Console.WriteLine($"10 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
         }
