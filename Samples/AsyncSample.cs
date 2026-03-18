@@ -36,16 +36,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine($"3 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             var task = RunLongOperationAsync();
             Console.WriteLine($"9 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
-            //try
-            //{
-                Console.WriteLine($"Result is {await task}");
-            throw new Exception("Test exception");
-            //}
-            //catch (Exception ex)
-            //{
-            //   Console.WriteLine($"{ex.Message}.Thread: { Thread.CurrentThread.ManagedThreadId}");
-            //    throw;
-            //}
+            Console.WriteLine($"Result is {await task}");            
             Console.WriteLine($"10 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
         }
     }
