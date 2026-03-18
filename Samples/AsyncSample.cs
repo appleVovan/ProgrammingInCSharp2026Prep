@@ -21,7 +21,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine($"5 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             for (int i = 0; i < 5; i++)
             {
-                throw new Exception("Test exception");
+                //throw new Exception("Test exception");
                 Console.WriteLine($"6.{i} Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
                 Thread.Sleep(1000);
                 res += 1000;
@@ -30,12 +30,13 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             return res;
         }
 
-        public void Run()
+        public async void RunAsync()
         {
             Console.WriteLine($"3 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             var task = RunLongOperationAsync();
             Console.WriteLine($"9 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
-            //Console.WriteLine($"Result is {task.Result}");
+            Console.WriteLine($"Result is {await task}");
+            Console.WriteLine($"10 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
         }
     }
 }
