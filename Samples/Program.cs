@@ -11,7 +11,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
     {
         static void Main(string[] args)
         {
-            Sample16();
+            Sample17();
         }
 
         #region Initialization in C# Examples
@@ -244,7 +244,20 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             Console.WriteLine(backgroundWorker.OutputPrams.Item2);
         }
 
-        
+
+        #endregion
+
+        #region Async/Await
+        static void Sample17()
+        {
+            Console.WriteLine($"1 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            var asyncSample = new AsyncSample();
+            Console.WriteLine($"2 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            asyncSample.Run();
+            Console.WriteLine($"8 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
+            Console.WriteLine($"9 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"10 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+        }
         #endregion
     }
 }
