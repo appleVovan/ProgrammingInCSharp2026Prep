@@ -254,9 +254,9 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             var asyncSample = new AsyncSample();
             Console.WriteLine($"2 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
             asyncSample.Run();
-            Console.WriteLine($"8 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
-            Console.WriteLine($"9 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
-            Console.WriteLine($"10 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"10 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");            
+            Console.WriteLine($"11 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
+            Console.WriteLine($"12 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
         }
         #endregion
     }
