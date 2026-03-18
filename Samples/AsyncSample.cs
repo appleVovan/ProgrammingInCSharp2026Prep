@@ -19,7 +19,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         {
             int res = 0;
             Console.WriteLine($"5 Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
-            throw new Exception("Test exception");
+            //throw new Exception("Test exception");
             for (int i = 0; i < 5; i++)
             {                
                 Console.WriteLine($"6.{i} Step. Thread: {Thread.CurrentThread.ManagedThreadId}");
@@ -39,6 +39,7 @@ namespace KMA.ProgrammingInCSharp2026.Samples
             //try
             //{
                 Console.WriteLine($"Result is {await task}");
+            throw new Exception("Test exception");
             //}
             //catch (Exception ex)
             //{
