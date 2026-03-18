@@ -229,14 +229,15 @@ namespace KMA.ProgrammingInCSharp2026.Samples
 
         static void Sample16() 
         {
-            var backgroundWorker = new MyBackgroudWorker("Test", 5, 3.14);
+            CancellationTokenSource tokenSource = new CancellationTokenSource();
+            var backgroundWorker = new MyBackgroudWorker("Test", 5, 3.14, tokenSource.Token);
             Thread myParalleOperation = new Thread(backgroundWorker.Process);
 
             myParalleOperation.Start(new object());
 
             //Perform some in main thread
 
-            backgroundWorker.Stop();
+            tokenSource.Cancel();
             myParalleOperation.Join(5000);
 
             //process OutputPrams

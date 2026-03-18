@@ -9,31 +9,27 @@ namespace KMA.ProgrammingInCSharp2026.Samples
         private Tuple<string, int, double> _inputPrams;
         private Tuple<string, bool> _outputPrams;
 
-        private bool _isRunning = true;
+        private CancellationToken _token;
 
         public Tuple<string, bool> OutputPrams { get { return _outputPrams; } }
 
-        public MyBackgroudWorker(string param1, int param2, double param3)
+        public MyBackgroudWorker(string param1, int param2, double param3, CancellationToken token)
         {
             _inputPrams = new Tuple<string, int, double>(param1, param2, param3);
-        }
-
-        public void Stop()
-        {
-            _isRunning = false;
+            _token = token;
         }
 
         public void Process()
         {
             var inputParams = _inputPrams;
             //Process inputParams
-            while (_isRunning)
+            while (!_token.IsCancellationRequested)
             {
                 if (!GetNextTask())
                 {
                     for (int i = 0; i<10; i++)
                     {
-                        if (!_isRunning)
+                        if (_token.IsCancellationRequested)
                         {
                             break;
                         }
@@ -42,13 +38,13 @@ namespace KMA.ProgrammingInCSharp2026.Samples
                     continue;
                 }
                 //Perform Step1
-                if (!_isRunning)
+                if (_token.IsCancellationRequested)
                 {
                     //End processing and step 2
                     break;
                 }
                 //Perform Step2
-                if (!_isRunning)
+                if (_token.IsCancellationRequested)
                 {
                     //End processing and step 3
                     break;
