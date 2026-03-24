@@ -21,10 +21,10 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             DepartmentSelectedCommand = new Command(LoadDepartment);
         }
 
-        private async void LoadDepartment()
+        private void LoadDepartment()
         {
             if (CurrentDepartment != null)
-                await Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment } });
+                Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } }).Wait();
         }
     }
 }
