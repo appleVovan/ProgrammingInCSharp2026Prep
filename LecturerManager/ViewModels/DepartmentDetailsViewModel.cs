@@ -18,6 +18,9 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         private readonly IDepartmentService _departmentService;
         private readonly ILecturerService _lecturerService;
 
+        private Task<DepartmentDetailsDTO> _detailsTask;
+        private Task<IEnumerable<LecturerListDTO>> _lecturersTask;
+
         private Guid _departmentId;
 
         [ObservableProperty]
@@ -34,12 +37,14 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             _departmentId = (Guid)query["DepartmentId"];
+            _detailsTask = _departmentService.GetDepartmentAsync(_departmentId);
+            _lecturersTask = _lecturerService.GetLecturersByDepartmentAsync(_departmentId);
         }
 
         internal async Task RefreshData()
         {
-            CurrentDepartment = await _departmentService.GetDepartmentAsync(_departmentId);
-            Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturerService.GetLecturersByDepartmentAsync(_departmentId));
+            CurrentDepartment = await _detailsTask;
+            Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturersTask);
         }
 
         [RelayCommand]
