@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="Departments"
-        ContentTemplate="{DataTemplate pages:LecturerCreatePage}"
+        ContentTemplate="{DataTemplate pages:DepartmentsPage}"
         Route="DepartmentsPage">
     </ShellContent>
 

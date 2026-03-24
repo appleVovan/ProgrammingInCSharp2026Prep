@@ -24,7 +24,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         private void LoadDepartment()
         {
             if (CurrentDepartment != null)
-                Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } });
+                Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment } });
         }
     }
 }
