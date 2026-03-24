@@ -8,7 +8,7 @@ using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 {
-    public partial class LecturerDetailsViewModel : ObservableObject, IQueryAttributable
+    public partial class LecturerDetailsViewModel : BaseViewModel, IQueryAttributable
     {
         private readonly ILecturerService _lecturerService;
         private LecturerDetailsDTO _currentLecturer;
@@ -32,6 +32,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 
         internal async Task RefreshData()
         {
+            IsBusy = true;
             _currentLecturer = await _lecturerService.GetLecturerAsync(_lecturerId);
             await Task.Run(CalculateAge);
             OnPropertyChanged(nameof(FirstName));
@@ -39,6 +40,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             OnPropertyChanged(nameof(Position));
             OnPropertyChanged(nameof(DateOfBirth));
             OnPropertyChanged(nameof(Age));
+            IsBusy = false;
         }
 
         private void CalculateAge()

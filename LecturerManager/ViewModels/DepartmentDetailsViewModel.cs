@@ -13,7 +13,7 @@ using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 {    
-    public partial class DepartmentDetailsViewModel : ObservableObject, IQueryAttributable
+    public partial class DepartmentDetailsViewModel : BaseViewModel, IQueryAttributable
     {
         private readonly IDepartmentService _departmentService;
         private readonly ILecturerService _lecturerService;
@@ -43,14 +43,18 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 
         internal async Task RefreshData()
         {
-            CurrentDepartment = await _detailsTask;
-            Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturersTask);
+            IsBusy = true;
+            CurrentDepartment = await _departmentService.GetDepartmentAsync(_departmentId);
+            Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturerService.GetLecturersByDepartmentAsync(_departmentId));
+            IsBusy = false;
         }
 
         [RelayCommand]
         private async Task LoadLecturer(Guid lecturerId)
         {
+            IsBusy = true;
             await Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "LecturerId", lecturerId } });
+            IsBusy = false;
         }
     }
 }

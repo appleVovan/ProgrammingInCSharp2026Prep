@@ -10,7 +10,7 @@ using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 {
-    public partial class DepartmentsViewModel : ObservableObject
+    public partial class DepartmentsViewModel : BaseViewModel
     {
         private readonly IDepartmentService _departmentService;
         [ObservableProperty]
@@ -25,18 +25,22 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 
         internal async Task RefreshData()
         {
+            IsBusy = true;
             Departments = new ObservableCollection<DepartmentListDTO>();
             await foreach (var department in _departmentService.GetAllDepartmentsAsync())
             {
                 Departments.Add(department);
             }
+            IsBusy = false;
         }
 
         [RelayCommand]
         private async Task GotoDepartment()
         {
+            IsBusy = true;
             if (CurrentDepartment != null)
                 await Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } });
+            IsBusy = false;
         }
     }
 }
