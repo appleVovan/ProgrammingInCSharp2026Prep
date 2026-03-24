@@ -12,7 +12,7 @@
         Margin="10"
         SelectionMode="Single"
         SelectedItem="{Binding CurrentDepartment}"
-        SelectionChangedCommand="{Binding DepartmentSelectedCommand}">
+        SelectionChangedCommand="{Binding GotoDepartmentCommand}">
         <CollectionView.ItemTemplate>
             <DataTemplate
                 x:DataType="models:DepartmentListDTO">

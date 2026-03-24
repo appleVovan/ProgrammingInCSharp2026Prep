@@ -40,11 +40,11 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         } 
         #endregion
 
-        public IEnumerable<DepartmentDBModel> GetDepartments()
+        public async IAsyncEnumerable<DepartmentDBModel> GetDepartmentsAsync()
         {
             foreach (var department in _departments)
             {
-                Thread.Sleep(1000);
+                await Task.Delay(500);
                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
             }
         }
@@ -61,11 +61,14 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
             return _lecturers.Count(lecturer => lecturer.DepartmentId == id);
         }
 
-        public DepartmentDBModel GetDepartment(Guid departmentGuid)
+        public Task<DepartmentDBModel> GetDepartmentAsync(Guid departmentGuid)
         {
-            Thread.Sleep(1000);
-            var department = _departments.FirstOrDefault(department => department.Id == departmentGuid);
-            return department is null ? null : new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
+            return Task.Run(() =>
+            {
+                Thread.Sleep(2000);
+                var department = _departments.FirstOrDefault(department => department.Id == departmentGuid);
+                return department is null ? null : new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
+            });
         }
 
         public LecturerDBModel GetLecturer(Guid lecturerGuid)

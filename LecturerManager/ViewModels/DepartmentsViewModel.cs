@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
@@ -9,20 +10,30 @@ using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
 {
-    public class DepartmentsViewModel
+    public partial class DepartmentsViewModel : ObservableObject
     {
         private readonly IDepartmentService _departmentService;
-        public ObservableCollection<DepartmentListDTO> Departments { get; set; }
-        public DepartmentListDTO CurrentDepartment { get; set; }
-        public AsyncRelayCommand DepartmentSelectedCommand { get; }
+        [ObservableProperty]
+        private ObservableCollection<DepartmentListDTO> _departments;
+        [ObservableProperty]
+        private DepartmentListDTO _currentDepartment;
+        
         public DepartmentsViewModel(IDepartmentService departmentService)
         {
             _departmentService = departmentService;
-            Departments = new ObservableCollection<DepartmentListDTO>(_departmentService.GetAllDepartments());
-            DepartmentSelectedCommand = new AsyncRelayCommand(LoadDepartment);
         }
 
-        private async Task LoadDepartment()
+        internal async Task RefreshData()
+        {
+            Departments = new ObservableCollection<DepartmentListDTO>();
+            await foreach (var department in _departmentService.GetAllDepartmentsAsync())
+            {
+                Departments.Add(department);
+            }
+        }
+
+        [RelayCommand]
+        private async Task GotoDepartment()
         {
             if (CurrentDepartment != null)
                 await Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } });

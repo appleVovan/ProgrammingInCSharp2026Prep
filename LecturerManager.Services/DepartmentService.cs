@@ -17,18 +17,18 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
             _lecturerRepository = lecturerRepository;
         }
 
-        public IEnumerable<DepartmentListDTO> GetAllDepartments()
+        public async IAsyncEnumerable<DepartmentListDTO> GetAllDepartmentsAsync()
         {
-            foreach (var department in _departmentRepository.GetDepartments())
+            await foreach (var department in _departmentRepository.GetDepartmentsAsync())
             {
                 var lecturersCount = _lecturerRepository.GetLecturersByDepartmentCount(department.Id);
                 yield return new DepartmentListDTO(department.Id, department.Name, department.Faculty, lecturersCount);
             }
         }
 
-        public DepartmentDetailsDTO GetDepartment(Guid departmentId)
+        public async Task<DepartmentDetailsDTO> GetDepartmentAsync(Guid departmentId)
         {
-            var department = _departmentRepository.GetDepartment(departmentId);
+            var department = await _departmentRepository.GetDepartmentAsync(departmentId);
             return new DepartmentDetailsDTO(department.Id, department.Name, department.Faculty, department.Email);
         }
     }

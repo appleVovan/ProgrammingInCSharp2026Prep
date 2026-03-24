@@ -6,9 +6,15 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 
 public partial class DepartmentsPage : ContentPage
 {
-	public DepartmentsPage(DepartmentsViewModel vm)
+	private readonly DepartmentsViewModel _viewModel;
+    public DepartmentsPage(DepartmentsViewModel vm)
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = _viewModel = vm;
 	}
+
+	override protected async void OnAppearing()
+	{
+		await _viewModel.RefreshData();
+    }
 }
