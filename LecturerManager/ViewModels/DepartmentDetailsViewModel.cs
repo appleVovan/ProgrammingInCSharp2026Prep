@@ -39,7 +39,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         internal async Task RefreshData()
         {
             CurrentDepartment = await _departmentService.GetDepartmentAsync(_departmentId);
-            Lecturers = new ObservableCollection<LecturerListDTO>(_lecturerService.GetLecturersByDepartment(_departmentId));
+            Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturerService.GetLecturersByDepartmentAsync(_departmentId));
         }
 
         [RelayCommand]

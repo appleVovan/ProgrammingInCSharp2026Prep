@@ -4,9 +4,15 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 
 public partial class LecturerDetailsPage : ContentPage
 {
+    private readonly LecturerDetailsViewModel _viewModel;
     public LecturerDetailsPage(LecturerDetailsViewModel vm)
-	{
-		InitializeComponent();
-		BindingContext = vm;
+    {
+        InitializeComponent();
+        BindingContext = _viewModel = vm;
+    }
+
+    override protected async void OnAppearing()
+    {
+        await _viewModel.RefreshData();
     }
 }

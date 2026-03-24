@@ -49,16 +49,22 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
             }
         }
 
-        public IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId)
+        public Task<IEnumerable<LecturerDBModel>> GetLecturersByDepartmentAsync(Guid departmentId)
         {
-            Thread.Sleep(1000);
-            return _lecturers.Where(lecturer => lecturer.DepartmentId == departmentId).Select(lecturer => new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate));
+            return Task.Run(() =>
+            {
+                Thread.Sleep(1000);
+                return _lecturers.Where(lecturer => lecturer.DepartmentId == departmentId).Select(lecturer => new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate));
+            });
         }
 
-        public int GetLecturersByDepartmentCount(Guid id)
+        public Task<int> GetLecturersByDepartmentCountAsync(Guid id)
         {
-            Thread.Sleep(500);
-            return _lecturers.Count(lecturer => lecturer.DepartmentId == id);
+            return Task.Run(() =>
+            {
+                Thread.Sleep(500);
+                return _lecturers.Count(lecturer => lecturer.DepartmentId == id);
+            });
         }
 
         public Task<DepartmentDBModel> GetDepartmentAsync(Guid departmentGuid)
@@ -71,11 +77,14 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
             });
         }
 
-        public LecturerDBModel GetLecturer(Guid lecturerGuid)
+        public Task<LecturerDBModel> GetLecturerAsync(Guid lecturerGuid)
         {
-            Thread.Sleep(1000);
-            var lecturer = _lecturers.FirstOrDefault(lecturer => lecturer.Id == lecturerGuid);
-            return lecturer is null ? null : new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate);
+            return Task.Run(() =>
+            {
+                Thread.Sleep(1000);
+                var lecturer = _lecturers.FirstOrDefault(lecturer => lecturer.Id == lecturerGuid);
+                return lecturer is null ? null : new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate);
+            });
         }
     }
 }

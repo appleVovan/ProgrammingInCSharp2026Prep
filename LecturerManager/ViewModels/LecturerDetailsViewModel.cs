@@ -13,6 +13,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         private readonly ILecturerService _lecturerService;
         private LecturerDetailsDTO _currentLecturer;
         private int _age;
+        private Guid _lecturerId;
 
         public string FirstName => _currentLecturer?.FirstName;
         public string LastName => _currentLecturer?.LastName;
@@ -26,9 +27,13 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         }
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
-            var lecturerId = (Guid)query["LecturerId"];
-            _currentLecturer = _lecturerService.GetLecturer(lecturerId);
-            CalculateAge();
+            _lecturerId = (Guid)query["LecturerId"];            
+        }
+
+        internal async Task RefreshData()
+        {
+            _currentLecturer = await _lecturerService.GetLecturerAsync(_lecturerId);
+            await Task.Run(CalculateAge);
             OnPropertyChanged(nameof(FirstName));
             OnPropertyChanged(nameof(LastName));
             OnPropertyChanged(nameof(Position));

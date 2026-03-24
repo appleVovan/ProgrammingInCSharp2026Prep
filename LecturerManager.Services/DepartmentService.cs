@@ -21,7 +21,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
         {
             await foreach (var department in _departmentRepository.GetDepartmentsAsync())
             {
-                var lecturersCount = _lecturerRepository.GetLecturersByDepartmentCount(department.Id);
+                var lecturersCount = await _lecturerRepository.GetLecturersByDepartmentCountAsync(department.Id);
                 yield return new DepartmentListDTO(department.Id, department.Name, department.Faculty, lecturersCount);
             }
         }
