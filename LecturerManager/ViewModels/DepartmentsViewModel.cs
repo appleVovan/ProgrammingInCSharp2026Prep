@@ -1,4 +1,5 @@
-﻿using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;
+﻿using CommunityToolkit.Mvvm.Input;
+using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Department;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Pages;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Services;
 using System;
@@ -13,18 +14,18 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         private readonly IDepartmentService _departmentService;
         public ObservableCollection<DepartmentListDTO> Departments { get; set; }
         public DepartmentListDTO CurrentDepartment { get; set; }
-        public Command DepartmentSelectedCommand { get; }
+        public AsyncRelayCommand DepartmentSelectedCommand { get; }
         public DepartmentsViewModel(IDepartmentService departmentService)
         {
             _departmentService = departmentService;
             Departments = new ObservableCollection<DepartmentListDTO>(_departmentService.GetAllDepartments());
-            DepartmentSelectedCommand = new Command(LoadDepartment);
+            DepartmentSelectedCommand = new AsyncRelayCommand(LoadDepartment);
         }
 
-        private void LoadDepartment()
+        private async Task LoadDepartment()
         {
             if (CurrentDepartment != null)
-                Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } }).Wait();
+                await Shell.Current.GoToAsync($"{nameof(DepartmentDetailsPage)}", new Dictionary<string, object> { { "DepartmentId", CurrentDepartment.Id } });
         }
     }
 }

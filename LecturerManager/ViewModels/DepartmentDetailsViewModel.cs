@@ -37,9 +37,9 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         }
 
         [RelayCommand]
-        private void LoadLecturer(Guid lecturerId)
+        private async Task LoadLecturer(Guid lecturerId)
         {
-            Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "LecturerId", lecturerId } });
+            await Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "LecturerId", lecturerId } });
         }
     }
 }
