@@ -11,27 +11,23 @@ public partial class LecturerCreatePage : ContentPage
         pPosition.ItemsSource = EnumExtensions.GetValuesWithNames<LecturerPosition>();        
 	}
 
-    private void CreateClicked(object sender, EventArgs e)
+    private async void CreateClicked(object sender, EventArgs e)
     {
         if (String.IsNullOrWhiteSpace(eFirstName.Text))
         {
-            DisplayAlert("Incomlete data!", "First Name can't be empty", "OK");
-            return;
+            await DisplayAlertAsync("Incomlete data!", "First Name can't be empty", "OK");
         }
         if (String.IsNullOrWhiteSpace(eLastName.Text))
         {
-            DisplayAlert("Incomlete data!", "Last Name can't be empty", "OK");
-            return;
+            await DisplayAlertAsync("Incomlete data!", "Last Name can't be empty", "OK");
         }
         if (pPosition.SelectedItem == null)
         {
-            DisplayAlert("Incomlete data!", "Position must be selected", "OK");
-            return;
+            await DisplayAlertAsync("Incomlete data!", "Position must be selected", "OK");
         }
         if (dpDoB.Date == null)
         {
-            DisplayAlert("Incomlete data!", "Date of birth mus be selected", "OK");
-            return;
+            await DisplayAlertAsync("Incomlete data!", "Date of birth mus be selected", "OK");
         }
         //var lecturer = new LecturerUIModel(Guid.Empty)
         //{
