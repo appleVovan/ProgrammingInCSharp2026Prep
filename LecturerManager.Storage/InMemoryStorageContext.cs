@@ -44,28 +44,33 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
         {
             foreach (var department in _departments)
             {
-                 yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
+                Thread.Sleep(1000);
+                yield return new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
             }
         }
 
         public IEnumerable<LecturerDBModel> GetLecturersByDepartment(Guid departmentId)
         {
+            Thread.Sleep(1000);
             return _lecturers.Where(lecturer => lecturer.DepartmentId == departmentId).Select(lecturer => new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate));
         }
 
         public int GetLecturersByDepartmentCount(Guid id)
         {
+            Thread.Sleep(500);
             return _lecturers.Count(lecturer => lecturer.DepartmentId == id);
         }
 
         public DepartmentDBModel GetDepartment(Guid departmentGuid)
         {
+            Thread.Sleep(1000);
             var department = _departments.FirstOrDefault(department => department.Id == departmentGuid);
             return department is null ? null : new DepartmentDBModel(department.Id, department.Name, department.Faculty, department.Email);
         }
 
         public LecturerDBModel GetLecturer(Guid lecturerGuid)
         {
+            Thread.Sleep(1000);
             var lecturer = _lecturers.FirstOrDefault(lecturer => lecturer.Id == lecturerGuid);
             return lecturer is null ? null : new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate);
         }
