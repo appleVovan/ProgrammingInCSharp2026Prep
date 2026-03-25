@@ -23,7 +23,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            builder.Services.AddSingleton<IStorageContext, InMemoryStorageContext>();
+            builder.Services.AddSingleton<IStorageContext, SQLLiteStorageContext>();
             builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
             builder.Services.AddSingleton<ILecturerRepository, LecturerRepository>();
             builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
@@ -37,7 +37,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
             builder.Services.AddTransient<DepartmentDetailsViewModel>();
             builder.Services.AddTransient<LecturerDetailsViewModel>();
 
-            return builder.Build();
+            return builder.Build();            
         }
     }
 }
