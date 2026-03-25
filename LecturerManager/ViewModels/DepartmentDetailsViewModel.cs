@@ -44,17 +44,37 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         internal async Task RefreshData()
         {
             IsBusy = true;
-            CurrentDepartment = await _departmentService.GetDepartmentAsync(_departmentId);
-            Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturerService.GetLecturersByDepartmentAsync(_departmentId));
-            IsBusy = false;
+            try
+            {
+                CurrentDepartment = await _departmentService.GetDepartmentAsync(_departmentId) ?? throw new Exception("Department does not exist.");
+                Lecturers = new ObservableCollection<LecturerListDTO>(await _lecturerService.GetLecturersByDepartmentAsync(_departmentId));
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlertAsync("Error", $"Failed to load department details: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         [RelayCommand]
         private async Task LoadLecturer(Guid lecturerId)
         {
             IsBusy = true;
-            await Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "LecturerId", lecturerId } });
-            IsBusy = false;
+            try
+            {
+                await Shell.Current.GoToAsync($"{nameof(LecturerDetailsPage)}", new Dictionary<string, object> { { "LecturerId", lecturerId } });
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlertAsync("Error", $"Failed to navigate to lecturer details: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }
