@@ -23,7 +23,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            builder.Services.AddSingleton<IStorageContext, SQLLiteStorageContext>();
+            builder.Services.AddSingleton<IStorageContext, FileStorageContext>();
             builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
             builder.Services.AddSingleton<ILecturerRepository, LecturerRepository>();
             builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
