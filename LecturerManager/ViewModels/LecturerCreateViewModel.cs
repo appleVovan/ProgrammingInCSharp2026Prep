@@ -26,12 +26,16 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         [ObservableProperty]
         private DateTime? _dateOfBirth;
 
+        [ObservableProperty]
+        private Dictionary<string, string> _errors;
+
         public EnumWithName<LecturerPosition>[] Positions => _positions;
 
         public LecturerCreateViewModel(ILecturerService lecturerService)
         {
             _lecturerService = lecturerService;
             _positions = EnumExtensions.GetValuesWithNames<LecturerPosition>();
+            Errors = InitErrors();
         }
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
@@ -42,6 +46,23 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
         public async Task CreateLecturer()
         {
             IsBusy = true;
+            var errors = Validators.ValidateLecturer(FirstName, LastName, Position?.Value, DateOfBirth);
+            Errors = InitErrors();
+            if (errors.Count > 0)
+            {
+                foreach (var error in errors)
+                {
+                    if (String.IsNullOrWhiteSpace(Errors[error.MemberName]))
+                    {
+                        Errors[error.MemberName] = error.ErrorMessage;
+                        continue;
+                    }
+                    Errors[error.MemberName] += Environment.NewLine + error.ErrorMessage;
+                }
+                OnPropertyChanged(nameof(Errors));
+                IsBusy = false;
+                return;
+            }
             try
             {
                 var newLecturer = new LecturerCreateDTO(_departmentId, FirstName, LastName, Position.Value, DateOfBirth.Value);
@@ -74,6 +95,17 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private Dictionary<string, string> InitErrors()
+        {
+            return new Dictionary<string, string>()
+            {
+                { nameof(FirstName), string.Empty },
+                { nameof(LastName), string.Empty },
+                { nameof(Position), string.Empty },
+                { nameof(DateOfBirth), string.Empty }
+            };
         }
     }
 }

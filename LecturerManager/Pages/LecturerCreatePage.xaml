@@ -15,11 +15,19 @@
                 <Entry
                     Placeholder="First Name"
                     Text="{Binding FirstName}"></Entry>
+                <Label 
+                    Text="{Binding Errors[FirstName]}" 
+                    TextColor="Red" 
+                    IsVisible="{Binding Errors[FirstName], Converter={StaticResource StringToBoolConverter}}" />    
                 <Label
                     Text="Last Name"/>
                 <Entry
                     Placeholder="Last Name"
                     Text="{Binding LastName}"></Entry>
+                <Label 
+                    Text="{Binding Errors[LastName]}" 
+                    TextColor="Red" 
+                    IsVisible="{Binding Errors[LastName], Converter={StaticResource StringToBoolConverter}}" />
                 <Label
                     Text="Position"/>
                 <Picker
@@ -27,10 +35,18 @@
                     ItemsSource="{Binding Positions}"
                     SelectedItem="{Binding Position}"
                     Title="Select Lecturer's position"></Picker>
+                <Label 
+                    Text="{Binding Errors[Position]}" 
+                    TextColor="Red" 
+                    IsVisible="{Binding Errors[Position], Converter={StaticResource StringToBoolConverter}}" />
                 <Label
                     Text="Date of birth"/>
                 <DatePicker
                     Date="{Binding DateOfBirth}"></DatePicker>
+                <Label 
+                    Text="{Binding Errors[DateOfBirth]}" 
+                    TextColor="Red" 
+                    IsVisible="{Binding Errors[DateOfBirth], Converter={StaticResource StringToBoolConverter}}" />
                 <Grid
                     ColumnDefinitions="*,*" 
                     ColumnSpacing="10"
