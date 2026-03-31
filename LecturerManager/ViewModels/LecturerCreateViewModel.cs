@@ -44,7 +44,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             IsBusy = true;
             try
             {
-                var newLecturer = new LecturerCreateDTO(_departmentId, FirstName, LastName, Position.Value, DateOfBirth ?? DateTime.MinValue);
+                var newLecturer = new LecturerCreateDTO(_departmentId, FirstName, LastName, Position.Value, DateOfBirth.Value);
                 await _lecturerService.CreateLecturerAsync(newLecturer);
                 await Shell.Current.GoToAsync("..");
             }

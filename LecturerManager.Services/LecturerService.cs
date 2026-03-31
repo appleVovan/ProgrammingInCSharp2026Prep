@@ -27,6 +27,9 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
         }
         public async Task CreateLecturerAsync(LecturerCreateDTO lecturerCreateDTO)
         {
+            var errors = lecturerCreateDTO.Validate();
+            if (errors.Count > 0) 
+                throw new ValidationException(String.Join(Environment.NewLine, errors.Select(s=>s.ErrorMessage)));
             var newLecturer = new LecturerDBModel(lecturerCreateDTO.DepartmentId, lecturerCreateDTO.FirstName, lecturerCreateDTO.LastName, lecturerCreateDTO.Position, lecturerCreateDTO.DateOfBirth);
             await _lecturerRepository.SaveLecturerAsync(newLecturer);
         }
