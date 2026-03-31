@@ -86,5 +86,15 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Storage
                 return lecturer is null ? null : new LecturerDBModel(lecturer.Id, lecturer.DepartmentId, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.BirthDate);
             });
         }
+
+        public Task SaveLecturerAsync(LecturerDBModel lecturer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteLecturerAsync(Guid lecturerId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

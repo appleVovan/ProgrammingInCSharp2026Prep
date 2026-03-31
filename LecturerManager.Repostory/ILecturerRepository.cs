@@ -10,5 +10,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Repository
         Task<IEnumerable<LecturerDBModel>> GetLecturersByDepartmentAsync(Guid id);
         Task<LecturerDBModel> GetLecturerAsync(Guid lecturerId);
         Task<int> GetLecturersByDepartmentCountAsync(Guid id);
+        Task SaveLecturerAsync(LecturerDBModel lecturer);
+        Task DeleteLecturerAsync(Guid lecturerId);
     }
 }
