@@ -76,5 +76,23 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
                 IsBusy = false;
             }
         }
+
+        [RelayCommand]
+        private async Task AddLecturer()
+        {
+            IsBusy = true;
+            try
+            {
+                await Shell.Current.GoToAsync($"{nameof(LecturerCreatePage)}", new Dictionary<string, object> { { nameof(LecturerCreateDTO.DepartmentId), _departmentId } });
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlertAsync("Error", $"Failed to navigate to lecturer create page: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
     }
 }

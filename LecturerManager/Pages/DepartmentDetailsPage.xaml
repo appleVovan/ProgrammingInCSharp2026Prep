@@ -7,7 +7,7 @@
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.DepartmentDetailsPage"
              x:DataType="vms:DepartmentDetailsViewModel"
              Title="Department Details" IsEnabled="{Binding IsNotBusy}">
-    <Grid RowDefinitions="Auto,*">
+    <Grid RowDefinitions="Auto,*,Auto">
         <Border 
             Grid.Row="0"
             Stroke="Blue" 
@@ -68,18 +68,24 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Border>
+        <Button
+            Grid.Row="2"
+            Command="{Binding AddLecturerCommand}"
+            Text="Create new Lecturer"
+            Margin="10"
+            HorizontalOptions="Center"/>
         <BoxView
             IsVisible="{Binding IsBusy}"
             BackgroundColor="Gray"
             Opacity="0.2"
             InputTransparent="False"
-            Grid.RowSpan="2"/>
+            Grid.RowSpan="3"/>
         <ActivityIndicator
             Color="Magenta"
             IsRunning="{Binding IsBusy}"
             IsVisible="{Binding IsBusy}"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Grid.RowSpan="2"/>
+            Grid.RowSpan="3"/>
     </Grid>
 </ContentPage>

@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.Pages"
+             xmlns:models="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Lecturer;assembly=LecturerManager.DTOModels"
+             xmlns:vms="clr-namespace:KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels"
              x:Class="KMA.ProgrammingInCSharp2026.LecturerManager.Pages.LecturerCreatePage"
-             Title="Create new Lecturer">
-    <ScrollView>
-        <VerticalStackLayout Padding="10,20" Spacing="10">
-            <Label
-                Text="First Name"/>
-            <Entry
-                x:Name="eFirstName"
-                Placeholder="First Name"></Entry>
-            <Label
-                Text="Last Name"/>
-            <Entry
-                x:Name="eLastName"
-                Placeholder="Last Name"></Entry>
-            <Label
-                Text="Position"/>
-            <Picker
-                x:Name="pPosition"
-                ItemDisplayBinding="{Binding DisplayName}"            
-                Title="Select Lecturer's position"></Picker>
-            <Label
-                Text="Date of birth"/>
-            <DatePicker
-                x:Name="dpDoB"
-                Date="{x:Null}"></DatePicker>
-            <Grid
-                ColumnDefinitions="*,*" 
-                ColumnSpacing="10"
-                Padding="10">
-                <Button
-                    Grid.Column="0"
-                    Text="Create Lecturer"
-                    Clicked="CreateClicked"></Button>
-                <Button
-                    Grid.Column="1"
-                    Text="Back"
-                    Clicked="BackClicked"></Button>
-            </Grid>
-        </VerticalStackLayout>
-    </ScrollView>
+             x:DataType="vms:LecturerCreateViewModel"
+             Title="Lecturer Create Page" IsEnabled="{Binding IsNotBusy}">
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="10,20" Spacing="10">
+                <Label
+                    Text="First Name"/>
+                <Entry
+                    Placeholder="First Name"
+                    Text="{Binding FirstName}"></Entry>
+                <Label
+                    Text="Last Name"/>
+                <Entry
+                    Placeholder="Last Name"
+                    Text="{Binding LastName}"></Entry>
+                <Label
+                    Text="Position"/>
+                <Picker
+                    ItemDisplayBinding="{Binding DisplayName}"
+                    ItemsSource="{Binding Positions}"
+                    SelectedItem="{Binding Position}"
+                    Title="Select Lecturer's position"></Picker>
+                <Label
+                    Text="Date of birth"/>
+                <DatePicker
+                    Date="{Binding DateOfBirth}"></DatePicker>
+                <Grid
+                    ColumnDefinitions="*,*" 
+                    ColumnSpacing="10"
+                    Padding="10">
+                    <Button
+                        Grid.Column="0"
+                        Text="Create Lecturer"
+                        Command="{Binding CreateLecturerCommand}"></Button>
+                    <Button
+                        Grid.Column="1"
+                        Text="Back"
+                        Command="{Binding BackCommand}"></Button>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+        <BoxView
+            IsVisible="{Binding IsBusy}"
+            BackgroundColor="Gray"
+            Opacity="0.2"
+            InputTransparent="False"/>
+        <ActivityIndicator
+            Color="Magenta"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+    </Grid>
 </ContentPage>
