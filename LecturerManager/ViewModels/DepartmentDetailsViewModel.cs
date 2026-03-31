@@ -41,6 +41,7 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             _lecturersTask = _lecturerService.GetLecturersByDepartmentAsync(_departmentId);
         }
 
+        [RelayCommand]
         internal async Task RefreshData()
         {
             IsBusy = true;
@@ -88,6 +89,26 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.ViewModels
             catch (Exception ex)
             {
                 await Shell.Current.DisplayAlertAsync("Error", $"Failed to navigate to lecturer create page: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        [RelayCommand]
+        private async Task DeleteLecturer(LecturerListDTO lecturer)
+        {
+            IsBusy = true;
+            try
+            {
+                if (await Shell.Current.DisplayAlertAsync("Confirm", "Are you sure you want to delete this lecturer?", "Yes", "No"))
+                    await _lecturerService.DeleteLecturerAsync(lecturer.Id);
+                Lecturers.Remove(lecturer);
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlertAsync("Error", $"Failed to navigate to lecturer details: {ex.Message}", "OK");
             }
             finally
             {
