@@ -16,7 +16,6 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Repository
 
         public Task<IEnumerable<LecturerDBModel>> GetLecturersByDepartmentAsync(Guid id)
         {
-            throw new NotImplementedException();
             return _storageContext.GetLecturersByDepartmentAsync(id);
         }
 

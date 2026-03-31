@@ -1,7 +1,9 @@
-﻿using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Lecturer;
+﻿using KMA.ProgrammingInCSharp2026.LecturerManager.DBModels;
+using KMA.ProgrammingInCSharp2026.LecturerManager.DTOModels.Lecturer;
 using KMA.ProgrammingInCSharp2026.LecturerManager.Repository;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
@@ -22,6 +24,16 @@ namespace KMA.ProgrammingInCSharp2026.LecturerManager.Services
         {
             var lecturer = await _lecturerRepository.GetLecturerAsync(lecturerId);           
             return lecturer is null ? null : new LecturerDetailsDTO(lecturer.Id, lecturer.FirstName, lecturer.LastName, lecturer.Position, lecturer.DateOfBirth);
+        }
+        public async Task CreateLecturerAsync(LecturerCreateDTO lecturerCreateDTO)
+        {
+            var newLecturer = new LecturerDBModel(lecturerCreateDTO.DepartmentId, lecturerCreateDTO.FirstName, lecturerCreateDTO.LastName, lecturerCreateDTO.Position, lecturerCreateDTO.DateOfBirth);
+            await _lecturerRepository.SaveLecturerAsync(newLecturer);
+        }
+
+        public Task DeleteLecturerAsync(Guid lecturerId)
+        {
+            return _lecturerRepository.DeleteLecturerAsync(lecturerId);
         }
     }
 }
